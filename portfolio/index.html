@@ -1,2241 +1,2854 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>김승규 | SI 기획 전문가 포트폴리오</title>
-  <meta name="description" content="7년차 SI 기획 전문가 김승규의 포트폴리오. 공공, 유통, 통신/금융 등 멀티 도메인 SI 프로젝트 설계 전문." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <style>
-    /* ══════════════════════════════════════════
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>김승규 | SI 기획 전문가 포트폴리오</title>
+        <meta
+            name="description"
+            content="7년차 SI 기획 전문가 김승규의 포트폴리오. 공공, 유통, 통신/금융 등 멀티 도메인 SI 프로젝트 설계 전문."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
+        <style>
+            /* ══════════════════════════════════════════
        RESET & DESIGN TOKENS
     ══════════════════════════════════════════ */
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
 
-    :root {
-      --bg-primary: #FFFFFF;
-      --bg-secondary: #F8F9FA;
-      --bg-card: #FFFFFF;
-      --bg-card-hover: #F1F5F9;
-      --border: rgba(15, 23, 42, 0.08);
-      --border-hover: rgba(15, 23, 42, 0.15);
-      --text-primary: #1E293B;
-      --text-secondary: #475569;
-      --text-muted: #94A3B8;
-      --accent: #2563EB;
-      --accent-dim: rgba(37, 99, 235, 0.06);
-      --accent-glow: rgba(37, 99, 235, 0.10);
-      --cyan: #0891B2;
-      --green: #059669;
-      --max-w: 1200px;
-      --nav-h: 67px;
-    }
+            :root {
+                --bg-primary: #ffffff;
+                --bg-secondary: #f8f9fa;
+                --bg-card: #ffffff;
+                --bg-card-hover: #f1f5f9;
+                --border: rgba(15, 23, 42, 0.08);
+                --border-hover: rgba(15, 23, 42, 0.15);
+                --text-primary: #1e293b;
+                --text-secondary: #475569;
+                --text-muted: #94a3b8;
+                --accent: #2563eb;
+                --accent-dim: rgba(37, 99, 235, 0.06);
+                --accent-glow: rgba(37, 99, 235, 0.1);
+                --cyan: #0891b2;
+                --green: #059669;
+                --max-w: 1200px;
+                --nav-h: 67px;
+            }
 
-    html {
-      scroll-behavior: smooth;
-    }
+            html {
+                scroll-behavior: smooth;
+            }
 
-    body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-primary);
-      background: var(--bg-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
+            body {
+                font-family:
+                    "Pretendard",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    sans-serif;
+                color: var(--text-primary);
+                background: var(--bg-primary);
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+                overflow-x: hidden;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+            }
 
-    /* Signature: animated gradient top bar */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #2563EB, #6366F1, #0891B2, #2563EB);
-      background-size: 300% 100%;
-      animation: gradientSlide 4s linear infinite;
-      z-index: 200;
-    }
+            /* Signature: animated gradient top bar */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #6366f1,
+                    #0891b2,
+                    #2563eb
+                );
+                background-size: 300% 100%;
+                animation: gradientSlide 4s linear infinite;
+                z-index: 200;
+            }
 
-    @keyframes gradientSlide {
-      from {
-        background-position: 0% 0;
-      }
+            @keyframes gradientSlide {
+                from {
+                    background-position: 0% 0;
+                }
 
-      to {
-        background-position: 300% 0;
-      }
-    }
+                to {
+                    background-position: 300% 0;
+                }
+            }
 
-    ::selection {
-      background: var(--accent);
-      color: #FFFFFF;
-    }
+            ::selection {
+                background: var(--accent);
+                color: #ffffff;
+            }
 
-    .container {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 48px;
-    }
+            .container {
+                max-width: var(--max-w);
+                margin: 0 auto;
+                padding: 0 48px;
+            }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 24px;
-      }
-    }
+            @media (max-width: 768px) {
+                .container {
+                    padding: 0 24px;
+                }
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        GNB NAVIGATION
     ══════════════════════════════════════════ */
-    .nav {
-      position: fixed;
-      top: 3px;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      height: var(--nav-h);
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.3s, box-shadow 0.3s;
-    }
+            .nav {
+                position: fixed;
+                top: 3px;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                height: var(--nav-h);
+                background: rgba(255, 255, 255, 0.85);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--border);
+                transition:
+                    background 0.3s,
+                    box-shadow 0.3s;
+            }
 
-    .nav.scrolled {
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
-    }
+            .nav.scrolled {
+                box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+            }
 
-    .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 48px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+            .nav-inner {
+                max-width: var(--max-w);
+                margin: 0 auto;
+                padding: 0 48px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
 
-    .nav-logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
+            .nav-logo {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: var(--text-primary);
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+            }
 
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
+            .nav-links {
+                display: flex;
+                gap: 36px;
+                list-style: none;
+            }
 
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
-    }
+            .nav-links a {
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--text-muted);
+                text-decoration: none;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                transition: color 0.3s;
+                position: relative;
+            }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 1px;
-      transition: width 0.3s ease;
-    }
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--accent);
+                border-radius: 1px;
+                transition: width 0.3s ease;
+            }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text-primary);
-    }
+            .nav-links a:hover,
+            .nav-links a.active {
+                color: var(--text-primary);
+            }
 
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
+            .nav-links a:hover::after,
+            .nav-links a.active::after {
+                width: 100%;
+            }
 
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
+            .nav-toggle {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 4px;
+            }
 
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text-primary);
-      margin: 5px 0;
-      transition: 0.3s;
-    }
+            .nav-toggle span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: var(--text-primary);
+                margin: 5px 0;
+                transition: 0.3s;
+            }
 
-    @media (max-width: 768px) {
-      .nav-inner {
-        padding: 0 24px;
-      }
+            @media (max-width: 768px) {
+                .nav-inner {
+                    padding: 0 24px;
+                }
 
-      .nav-toggle {
-        display: block;
-      }
+                .nav-toggle {
+                    display: block;
+                }
 
-      .nav-links {
-        position: fixed;
-        top: calc(var(--nav-h) + 3px);
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 32px 24px;
-        gap: 24px;
-        border-bottom: 1px solid var(--border);
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.4s ease, opacity 0.4s ease;
-      }
+                .nav-links {
+                    position: fixed;
+                    top: calc(var(--nav-h) + 3px);
+                    left: 0;
+                    right: 0;
+                    background: rgba(255, 255, 255, 0.98);
+                    backdrop-filter: blur(20px);
+                    flex-direction: column;
+                    padding: 32px 24px;
+                    gap: 24px;
+                    border-bottom: 1px solid var(--border);
+                    transform: translateY(-100%);
+                    opacity: 0;
+                    pointer-events: none;
+                    transition:
+                        transform 0.4s ease,
+                        opacity 0.4s ease;
+                }
 
-      .nav-links.open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-      }
+                .nav-links.open {
+                    transform: translateY(0);
+                    opacity: 1;
+                    pointer-events: all;
+                }
 
-      .nav-links a {
-        font-size: 16px;
-      }
-    }
+                .nav-links a {
+                    font-size: 16px;
+                }
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        SECTION 1: HERO / PROFILE
     ══════════════════════════════════════════ */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: calc(var(--nav-h) + 63px) 0 80px;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 60%);
-    }
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: calc(var(--nav-h) + 63px) 0 80px;
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(180deg, #f8fafc 0%, #ffffff 60%);
+            }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-      animation: heroGlow 8s ease-in-out infinite alternate;
-    }
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: -20%;
+                right: -10%;
+                width: 700px;
+                height: 700px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(37, 99, 235, 0.06) 0%,
+                    transparent 70%
+                );
+                pointer-events: none;
+                animation: heroGlow 8s ease-in-out infinite alternate;
+            }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -10%;
-      left: -5%;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
-      pointer-events: none;
-      animation: heroGlow 10s ease-in-out infinite alternate-reverse;
-    }
+            .hero::after {
+                content: "";
+                position: absolute;
+                bottom: -10%;
+                left: -5%;
+                width: 500px;
+                height: 500px;
+                border-radius: 50%;
+                background: radial-gradient(
+                    circle,
+                    rgba(99, 102, 241, 0.04) 0%,
+                    transparent 70%
+                );
+                pointer-events: none;
+                animation: heroGlow 10s ease-in-out infinite alternate-reverse;
+            }
 
-    @keyframes heroGlow {
-      from {
-        transform: translate(0, 0) scale(1);
-      }
+            @keyframes heroGlow {
+                from {
+                    transform: translate(0, 0) scale(1);
+                }
 
-      to {
-        transform: translate(30px, -20px) scale(1.1);
-      }
-    }
+                to {
+                    transform: translate(30px, -20px) scale(1.1);
+                }
+            }
 
-    /* Signature: subtle dot grid */
-    .hero-dots {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
-      background-size: 28px 28px;
-      pointer-events: none;
-      mask-image: radial-gradient(ellipse 70% 60% at 80% 20%, black 0%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 80% 20%, black 0%, transparent 100%);
-    }
+            /* Signature: subtle dot grid */
+            .hero-dots {
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(
+                    circle,
+                    rgba(37, 99, 235, 0.045) 1px,
+                    transparent 1px
+                );
+                background-size: 28px 28px;
+                pointer-events: none;
+                mask-image: radial-gradient(
+                    ellipse 70% 60% at 80% 20%,
+                    black 0%,
+                    transparent 100%
+                );
+                -webkit-mask-image: radial-gradient(
+                    ellipse 70% 60% at 80% 20%,
+                    black 0%,
+                    transparent 100%
+                );
+            }
 
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 48px;
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 80px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-    }
+            .hero-inner {
+                max-width: var(--max-w);
+                margin: 0 auto;
+                padding: 0 48px;
+                display: grid;
+                grid-template-columns: 1fr 380px;
+                gap: 80px;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+                width: 100%;
+            }
 
-    .hero-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+            .hero-eyebrow {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--accent);
+                margin-bottom: 24px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
 
-    .hero-eyebrow::before {
-      content: '';
-      width: 40px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 1px;
-    }
+            .hero-eyebrow::before {
+                content: "";
+                width: 40px;
+                height: 2px;
+                background: var(--accent);
+                border-radius: 1px;
+            }
 
-    .hero-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 80px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
-    }
+            .hero-name {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 80px;
+                font-weight: 700;
+                color: var(--text-primary);
+                line-height: 1;
+                letter-spacing: -0.03em;
+                margin-bottom: 16px;
+            }
 
-    .hero-name .accent {
-      color: var(--accent);
-    }
+            .hero-name .accent {
+                color: var(--accent);
+            }
 
-    .hero-title {
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-      letter-spacing: 0.01em;
-    }
+            .hero-title {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--text-secondary);
+                margin-bottom: 32px;
+                letter-spacing: 0.01em;
+            }
 
-    .hero-desc {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.85;
-      margin-bottom: 48px;
-    }
+            .hero-desc {
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--text-muted);
+                max-width: 520px;
+                line-height: 1.85;
+                margin-bottom: 48px;
+            }
 
-    /* Profile card */
-    .profile-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px 32px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
-    }
+            /* Profile card */
+            .profile-card {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                padding: 40px 32px;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+            }
 
-    .profile-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--cyan));
-    }
+            .profile-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent), var(--cyan));
+            }
 
-    .profile-photo-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
+            .profile-photo-wrap {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 28px;
+            }
 
-    .profile-photo {
-      width: 120px;
-      height: 150px;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 14px;
-      border: 2px solid var(--border-hover);
-    }
+            .profile-photo {
+                width: 120px;
+                height: 150px;
+                object-fit: cover;
+                object-position: top;
+                border-radius: 14px;
+                border: 2px solid var(--border-hover);
+            }
 
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+            }
 
-    .profile-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
-    }
+            .profile-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 14px;
+                border-bottom: 1px solid var(--border);
+            }
 
-    .profile-row:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+            .profile-row:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
 
-    .profile-key {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
+            .profile-key {
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
 
-    .profile-val {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-primary);
-      text-align: right;
-    }
+            .profile-val {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--text-primary);
+                text-align: right;
+            }
 
-    .profile-val a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+            .profile-val a {
+                color: var(--accent);
+                text-decoration: none;
+                transition: color 0.2s;
+            }
 
-    .profile-val a:hover {
-      color: var(--cyan);
-    }
+            .profile-val a:hover {
+                color: var(--cyan);
+            }
 
-    @media (max-width: 768px) {
-      .hero {
-        padding: calc(var(--nav-h) + 43px) 0 60px;
-      }
+            @media (max-width: 768px) {
+                .hero {
+                    padding: calc(var(--nav-h) + 43px) 0 60px;
+                }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        padding: 0 24px;
-      }
+                .hero-inner {
+                    grid-template-columns: 1fr;
+                    gap: 48px;
+                    padding: 0 24px;
+                }
 
-      .hero-name {
-        font-size: 48px;
-      }
+                .hero-name {
+                    font-size: 48px;
+                }
 
-      .hero-title {
-        font-size: 18px;
-      }
+                .hero-title {
+                    font-size: 18px;
+                }
 
-      .profile-card {
-        order: -1;
-      }
-    }
+                .profile-card {
+                    order: -1;
+                }
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        Section Header (shared)
     ══════════════════════════════════════════ */
-    .section-header {
-      margin-bottom: 64px;
-    }
+            .section-header {
+                margin-bottom: 64px;
+            }
 
-    .section-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+            .section-eyebrow {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--accent);
+                margin-bottom: 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
 
-    .section-eyebrow::before {
-      content: '';
-      width: 24px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 1px;
-    }
+            .section-eyebrow::before {
+                content: "";
+                width: 24px;
+                height: 2px;
+                background: var(--accent);
+                border-radius: 1px;
+            }
 
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 44px;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-    }
+            .section-title {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 44px;
+                font-weight: 700;
+                color: var(--text-primary);
+                letter-spacing: -0.02em;
+                line-height: 1.15;
+            }
 
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 32px;
-      }
-    }
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 32px;
+                }
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        SECTION 2: COMPETENCY & TOOLS
     ══════════════════════════════════════════ */
-    .competency {
-      padding: 140px 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
+            .competency {
+                padding: 140px 0;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+            }
 
-    .comp-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 80px;
-    }
+            .comp-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+                margin-bottom: 80px;
+            }
 
-    .comp-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 36px 28px;
-      transition: border-color 0.3s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
+            .comp-card {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 36px 28px;
+                transition:
+                    border-color 0.3s,
+                    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    box-shadow 0.3s;
+                position: relative;
+                overflow: hidden;
+            }
 
-    .comp-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
-    }
+            .comp-card:hover {
+                border-color: var(--border-hover);
+                transform: translateY(-6px);
+                box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+            }
 
-    .comp-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
+            .comp-card::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    135deg,
+                    var(--accent-dim) 0%,
+                    transparent 60%
+                );
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
 
-    .comp-card:hover::before {
-      opacity: 1;
-    }
+            .comp-card:hover::before {
+                opacity: 1;
+            }
 
-    .comp-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: rgba(37, 99, 235, 0.10);
-      margin-bottom: 20px;
-      line-height: 1;
-      position: relative;
-      z-index: 1;
-    }
+            .comp-num {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 48px;
+                font-weight: 700;
+                color: rgba(37, 99, 235, 0.1);
+                margin-bottom: 20px;
+                line-height: 1;
+                position: relative;
+                z-index: 1;
+            }
 
-    .comp-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 14px;
-      line-height: 1.4;
-      position: relative;
-      z-index: 1;
-    }
+            .comp-title {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text-primary);
+                margin-bottom: 14px;
+                line-height: 1.4;
+                position: relative;
+                z-index: 1;
+            }
 
-    .comp-desc {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.85;
-      position: relative;
-      z-index: 1;
-    }
+            .comp-desc {
+                font-size: 14px;
+                color: var(--text-secondary);
+                line-height: 1.85;
+                position: relative;
+                z-index: 1;
+            }
 
-    /* Tools */
-    .tools-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
+            /* Tools */
+            .tools-label {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 24px;
+            }
 
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
+            .tools-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
 
-    .tool-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 20px 24px;
-      text-align: center;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    }
+            .tool-item {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 28px 20px 24px;
+                text-align: center;
+                transition:
+                    border-color 0.3s,
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
 
-    .tool-item:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
-    }
+            .tool-item:hover {
+                border-color: var(--accent);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+            }
 
-    .tool-icon {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 14px;
-    }
+            .tool-icon {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 14px;
+            }
 
-    .tool-icon svg {
-      width: 36px;
-      height: 36px;
-    }
+            .tool-icon svg {
+                width: 36px;
+                height: 36px;
+            }
 
-    .tool-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
+            .tool-name {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text-primary);
+                margin-bottom: 8px;
+            }
 
-    .tool-level {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 3px 12px;
-      border-radius: 99px;
-      margin-bottom: 10px;
-    }
+            .tool-level {
+                display: inline-block;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                color: var(--accent);
+                background: var(--accent-dim);
+                padding: 3px 12px;
+                border-radius: 99px;
+                margin-bottom: 10px;
+            }
 
-    .tool-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+            .tool-desc {
+                font-size: 12px;
+                color: var(--text-muted);
+                line-height: 1.6;
+            }
 
-    @media (max-width: 768px) {
-      .comp-grid {
-        grid-template-columns: 1fr;
-      }
+            @media (max-width: 768px) {
+                .comp-grid {
+                    grid-template-columns: 1fr;
+                }
 
-      .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+                .tools-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
 
-    /* ══════════════════════════════════════════
-       SECTION 3: EXPERIENCE (Sticky scroll)
+            /* ══════════════════════════════════════════
+       SECTION 3: EXPERIENCE (Timeline)
     ══════════════════════════════════════════ */
-    .experience {
-      padding: 140px 0;
-      background: var(--bg-primary);
-    }
+            .experience {
+                padding: 140px 0;
+                background: var(--bg-primary);
+            }
 
-    .exp-layout {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 80px;
-    }
+            .exp-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 64px;
+            }
 
-    .exp-sticky {
-      position: sticky;
-      top: calc(var(--nav-h) + 63px);
-      align-self: start;
-    }
+            .exp-header {
+                display: flex;
+                flex-direction: column;
+            }
 
-    .exp-sticky .section-eyebrow {
-      margin-bottom: 16px;
-    }
+            .exp-header .section-eyebrow {
+                margin-bottom: 16px;
+            }
 
-    .exp-sticky .section-title {
-      font-size: 40px;
-      margin-bottom: 24px;
-    }
+            .exp-header .section-title {
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
 
-    .exp-sticky-desc {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
+            .exp-sticky-desc {
+                font-size: 14px;
+                color: var(--text-muted);
+                line-height: 1.8;
+                max-width: 720px;
+                margin-bottom: 32px;
+            }
 
-    .exp-bar {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+            .exp-bar {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
 
-    .exp-bar-track {
-      flex: 1;
-      height: 6px;
-      border-radius: 99px;
-      background: var(--bg-secondary);
-      overflow: hidden;
-      display: flex;
-    }
+            .exp-bar-labels {
+                display: flex;
+                width: 100%;
+            }
 
-    .exp-bar-seg1 {
-      width: 30%;
-      background: rgba(37, 99, 235, 0.20);
-      border-radius: 99px 0 0 99px;
-    }
+            .exp-bar-label {
+                font-size: 13px;
+                color: var(--text-muted);
+                white-space: nowrap;
+            }
 
-    .exp-bar-seg2 {
-      width: 70%;
-      background: linear-gradient(90deg, var(--accent), var(--cyan));
-      border-radius: 0 99px 99px 0;
-    }
+            .exp-bar-label-left {
+                width: 30%;
+                text-align: left;
+            }
 
-    .exp-bar-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
+            .exp-bar-label-right {
+                width: 70%;
+                text-align: left;
+                color: var(--accent);
+                font-weight: 700;
+            }
 
-    .exp-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+            .exp-bar-track {
+                width: 100%;
+                height: 6px;
+                border-radius: 99px;
+                background: var(--bg-secondary);
+                overflow: hidden;
+                display: flex;
+            }
 
-    .exp-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px 36px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
+            .exp-bar-seg1 {
+                width: 30%;
+                background: rgba(37, 99, 235, 0.2);
+                border-radius: 99px 0 0 99px;
+            }
 
-    .exp-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-    }
+            .exp-bar-seg2 {
+                width: 70%;
+                background: linear-gradient(90deg, var(--accent), var(--cyan));
+                border-radius: 0 99px 99px 0;
+            }
 
-    .exp-card-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
+            .exp-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                position: relative;
+                padding-left: 40px;
+            }
 
-    .exp-company {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
+            .exp-cards::before {
+                content: "";
+                position: absolute;
+                left: 11px;
+                top: 12px;
+                bottom: 12px;
+                width: 2px;
+                background: var(--border);
+            }
 
-    .exp-rank {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 5px 14px;
-      border-radius: 99px;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
+            .exp-card {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 40px 36px;
+                transition:
+                    border-color 0.3s,
+                    box-shadow 0.3s;
+                position: relative;
+            }
 
-    .exp-period {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
+            .exp-card::before {
+                content: "";
+                position: absolute;
+                left: -34px;
+                top: 44px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: var(--accent);
+                border: 2px solid var(--bg-primary);
+                box-shadow: 0 0 0 3px var(--accent-dim);
+            }
 
-    .exp-role {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
+            .exp-card:hover {
+                border-color: var(--border-hover);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            }
 
-    .exp-tasks {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+            .exp-card-head {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 16px;
+                margin-bottom: 24px;
+                flex-wrap: wrap;
+            }
 
-    .exp-tasks li {
-      font-size: 14px;
-      color: var(--text-secondary);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.7;
-    }
+            .exp-company {
+                font-size: 24px;
+                font-weight: 800;
+                color: var(--text-primary);
+            }
 
-    .exp-tasks li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
+            .exp-rank {
+                font-size: 12px;
+                font-weight: 700;
+                color: var(--accent);
+                background: var(--accent-dim);
+                padding: 5px 14px;
+                border-radius: 99px;
+                letter-spacing: 0.04em;
+                white-space: nowrap;
+            }
 
-    @media (max-width: 768px) {
-      .exp-layout {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
+            .exp-period {
+                font-size: 13px;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+            }
 
-      .exp-sticky {
-        position: relative;
-        top: 0;
-      }
-    }
+            .exp-role {
+                font-size: 15px;
+                font-weight: 700;
+                color: var(--accent);
+                margin-bottom: 16px;
+            }
 
-    /* ══════════════════════════════════════════
+            .exp-tasks {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .exp-tasks li {
+                font-size: 14px;
+                color: var(--text-secondary);
+                padding-left: 18px;
+                position: relative;
+                line-height: 1.7;
+            }
+
+            .exp-tasks li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: var(--accent);
+            }
+
+            @media (max-width: 768px) {
+                .exp-layout {
+                    gap: 48px;
+                }
+
+                .exp-header .section-title {
+                    font-size: 28px;
+                }
+
+                .exp-bar-label {
+                    font-size: 11px;
+                }
+
+                .exp-cards {
+                    padding-left: 28px;
+                }
+
+                .exp-cards::before {
+                    left: 7px;
+                }
+
+                .exp-card {
+                    padding: 28px 24px;
+                }
+
+                .exp-card::before {
+                    left: -24px;
+                    top: 32px;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+
+            /* ══════════════════════════════════════════
        SECTION 4: WORKS
     ══════════════════════════════════════════ */
-    .works {
-      padding: 140px 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-    }
+            .works {
+                padding: 140px 0;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--border);
+            }
 
-    .works-notice {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 10px;
-      padding: 16px 24px;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-      line-height: 1.7;
-    }
+            .works-notice {
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-left: 3px solid var(--accent);
+                border-radius: 10px;
+                padding: 16px 24px;
+                font-size: 13px;
+                color: var(--text-muted);
+                margin-bottom: 48px;
+                line-height: 1.7;
+            }
 
-    .filter-tabs {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
+            .filter-tabs {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+                margin-bottom: 48px;
+            }
 
-    .filter-tab {
-      font-family: 'Pretendard', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 8px 20px;
-      border-radius: 99px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.25s ease;
-      letter-spacing: 0.02em;
-    }
+            .filter-tab {
+                font-family: "Pretendard", sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                padding: 8px 20px;
+                border-radius: 99px;
+                border: 1px solid var(--border);
+                background: transparent;
+                color: var(--text-secondary);
+                cursor: pointer;
+                transition: all 0.25s ease;
+                letter-spacing: 0.02em;
+            }
 
-    .filter-tab:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+            .filter-tab:hover {
+                border-color: var(--accent);
+                color: var(--accent);
+            }
 
-    .filter-tab.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #FFFFFF;
-    }
+            .filter-tab.active {
+                background: var(--accent);
+                border-color: var(--accent);
+                color: #ffffff;
+            }
 
-    .project-list {
-      display: flex;
-      flex-direction: column;
-    }
+            .project-list {
+                display: flex;
+                flex-direction: column;
+            }
 
-    .project-row {
-      display: grid;
-      grid-template-columns: 100px 1fr 160px 120px 40px;
-      align-items: center;
-      gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.2s, padding 0.2s;
-      position: relative;
-    }
+            .project-row {
+                display: grid;
+                grid-template-columns: 100px 1fr 160px 120px 40px;
+                align-items: center;
+                gap: 24px;
+                padding: 24px 0;
+                border-bottom: 1px solid var(--border);
+                cursor: pointer;
+                transition:
+                    background 0.2s,
+                    padding 0.2s;
+                position: relative;
+            }
 
-    .project-row:first-child {
-      border-top: 1px solid var(--border);
-    }
+            .project-row:first-child {
+                border-top: 1px solid var(--border);
+            }
 
-    .project-row:hover {
-      background: var(--bg-card);
-      padding-left: 20px;
-      padding-right: 20px;
-      margin: 0 -20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    }
+            .project-row:hover {
+                background: var(--bg-card);
+                padding-left: 20px;
+                padding-right: 20px;
+                margin: 0 -20px;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            }
 
-    .project-row.hidden {
-      display: none;
-    }
+            .project-row.hidden {
+                display: none;
+            }
 
-    .proj-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-    }
+            .proj-num {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 12px;
+                font-weight: 600;
+                color: var(--text-muted);
+                letter-spacing: 0.02em;
+            }
 
-    .proj-main {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+            .proj-main {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
 
-    .proj-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.35;
-      transition: color 0.2s;
-    }
+            .proj-title {
+                font-size: 17px;
+                font-weight: 700;
+                color: var(--text-primary);
+                line-height: 1.35;
+                transition: color 0.2s;
+            }
 
-    .project-row:hover .proj-title {
-      color: var(--accent);
-    }
+            .project-row:hover .proj-title {
+                color: var(--accent);
+            }
 
-    .proj-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+            .proj-tags {
+                display: flex;
+                gap: 6px;
+                flex-wrap: wrap;
+            }
 
-    .proj-tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 10px;
-      border-radius: 99px;
-      letter-spacing: 0.02em;
-    }
+            .proj-tag {
+                font-size: 11px;
+                font-weight: 600;
+                padding: 2px 10px;
+                border-radius: 99px;
+                letter-spacing: 0.02em;
+            }
 
-    .proj-tag.public {
-      background: rgba(5, 150, 105, 0.08);
-      color: #059669;
-    }
+            .proj-tag.public {
+                background: rgba(5, 150, 105, 0.08);
+                color: #059669;
+            }
 
-    .proj-tag.retail {
-      background: rgba(217, 119, 6, 0.08);
-      color: #D97706;
-    }
+            .proj-tag.retail {
+                background: rgba(217, 119, 6, 0.08);
+                color: #d97706;
+            }
 
-    .proj-tag.telecom {
-      background: rgba(37, 99, 235, 0.08);
-      color: var(--accent);
-    }
+            .proj-tag.telecom {
+                background: rgba(37, 99, 235, 0.08);
+                color: var(--accent);
+            }
 
-    .proj-tag.manufacturing {
-      background: rgba(220, 38, 38, 0.08);
-      color: #DC2626;
-    }
+            .proj-tag.manufacturing {
+                background: rgba(220, 38, 38, 0.08);
+                color: #dc2626;
+            }
 
-    .proj-tag.inhouse {
-      background: rgba(8, 145, 178, 0.08);
-      color: var(--cyan);
-    }
+            .proj-tag.inhouse {
+                background: rgba(8, 145, 178, 0.08);
+                color: var(--cyan);
+            }
 
-    .proj-tag.consecutive {
-      background: rgba(234, 88, 12, 0.08);
-      color: #EA580C;
-    }
+            .proj-tag.consecutive {
+                background: rgba(234, 88, 12, 0.08);
+                color: #ea580c;
+            }
 
-    .proj-client {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
+            .proj-tag.education {
+                background: rgba(124, 58, 237, 0.08);
+                color: #7c3aed;
+            }
 
-    .proj-period {
-      font-size: 12px;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
+            .proj-client {
+                font-size: 13px;
+                color: var(--text-secondary);
+            }
 
-    .proj-arrow {
-      font-size: 18px;
-      color: var(--text-muted);
-      transition: color 0.2s, transform 0.2s;
-    }
+            .proj-period {
+                font-size: 12px;
+                color: var(--text-muted);
+                white-space: nowrap;
+            }
 
-    .project-row:hover .proj-arrow {
-      color: var(--accent);
-      transform: translateX(4px);
-    }
+            .proj-arrow {
+                font-size: 18px;
+                color: var(--text-muted);
+                transition:
+                    color 0.2s,
+                    transform 0.2s;
+            }
 
-    @media (max-width: 900px) {
-      .project-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 20px 0;
-      }
+            .project-row:hover .proj-arrow {
+                color: var(--accent);
+                transform: translateX(4px);
+            }
 
-      .proj-num {
-        display: none;
-      }
+            @media (max-width: 900px) {
+                .project-row {
+                    grid-template-columns: 1fr;
+                    gap: 8px;
+                    padding: 20px 0;
+                }
 
-      .proj-client,
-      .proj-period {
-        font-size: 12px;
-      }
+                .proj-num {
+                    display: none;
+                }
 
-      .proj-arrow {
-        display: none;
-      }
-    }
+                .proj-client,
+                .proj-period {
+                    font-size: 12px;
+                }
 
-    /* ══════════════════════════════════════════
+                .proj-arrow {
+                    display: none;
+                }
+            }
+
+            /* ══════════════════════════════════════════
        MODAL
     ══════════════════════════════════════════ */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
+            .modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(15, 23, 42, 0.45);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.35s ease;
+            }
 
-    .modal-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
+            .modal-overlay.open {
+                opacity: 1;
+                pointer-events: all;
+            }
 
-    .modal {
-      background: var(--bg-card);
-      border: 1px solid var(--border-hover);
-      border-radius: 24px;
-      width: 100%;
-      max-width: 760px;
-      max-height: 90vh;
-      overflow-y: auto;
-      transform: translateY(30px) scale(0.97);
-      transition: transform 0.35s ease;
-      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12);
-    }
+            .modal {
+                background: var(--bg-card);
+                border: 1px solid var(--border-hover);
+                border-radius: 24px;
+                width: 100%;
+                max-width: 760px;
+                max-height: 90vh;
+                overflow-y: auto;
+                transform: translateY(30px) scale(0.97);
+                transition: transform 0.35s ease;
+                box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12);
+            }
 
-    .modal-overlay.open .modal {
-      transform: translateY(0) scale(1);
-    }
+            .modal-overlay.open .modal {
+                transform: translateY(0) scale(1);
+            }
 
-    .modal-header {
-      background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-      padding: 40px 44px 36px;
-      border-radius: 24px 24px 0 0;
-      position: relative;
-      border-bottom: 1px solid var(--border);
-    }
+            .modal-header {
+                background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+                padding: 40px 44px 36px;
+                border-radius: 24px 24px 0 0;
+                position: relative;
+                border-bottom: 1px solid var(--border);
+            }
 
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      background: rgba(0, 0, 0, 0.04);
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 22px;
-      color: var(--text-secondary);
-      transition: background 0.2s, color 0.2s;
-      font-family: 'Pretendard', sans-serif;
-      line-height: 1;
-    }
+            .modal-close {
+                position: absolute;
+                top: 20px;
+                right: 24px;
+                background: rgba(0, 0, 0, 0.04);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 22px;
+                color: var(--text-secondary);
+                transition:
+                    background 0.2s,
+                    color 0.2s;
+                font-family: "Pretendard", sans-serif;
+                line-height: 1;
+            }
 
-    .modal-close:hover {
-      background: rgba(0, 0, 0, 0.08);
-      color: var(--text-primary);
-    }
+            .modal-close:hover {
+                background: rgba(0, 0, 0, 0.08);
+                color: var(--text-primary);
+            }
 
-    .modal-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
+            .modal-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 16px;
+            }
 
-    .modal-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text-primary);
-      line-height: 1.35;
-      margin-bottom: 20px;
-    }
+            .modal-title {
+                font-size: 24px;
+                font-weight: 800;
+                color: var(--text-primary);
+                line-height: 1.35;
+                margin-bottom: 20px;
+            }
 
-    .modal-meta-row {
-      font-size: 13px;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
+            .modal-meta-row {
+                font-size: 13px;
+                color: var(--text-muted);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 24px;
+            }
 
-    .modal-meta-item {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
+            .modal-meta-item {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
 
-    .modal-meta-item .key {
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
+            .modal-meta-item .key {
+                color: var(--text-muted);
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
 
-    .modal-meta-item .val {
-      color: var(--text-secondary);
-    }
+            .modal-meta-item .val {
+                color: var(--text-secondary);
+            }
 
-    .modal-body {
-      padding: 40px 44px;
-    }
+            .modal-body {
+                padding: 40px 44px;
+            }
 
-    .modal-section {
-      margin-bottom: 32px;
-    }
+            .modal-section {
+                margin-bottom: 32px;
+            }
 
-    .modal-section:last-child {
-      margin-bottom: 0;
-    }
+            .modal-section:last-child {
+                margin-bottom: 0;
+            }
 
-    .modal-section-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-    }
+            .modal-section-label {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--accent);
+                margin-bottom: 14px;
+            }
 
-    .modal-section-content {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.85;
-    }
+            .modal-section-content {
+                font-size: 14px;
+                color: var(--text-secondary);
+                line-height: 1.85;
+            }
 
-    .modal-task-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+            .modal-task-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
 
-    .modal-task-list li {
-      font-size: 14px;
-      color: var(--text-secondary);
-      padding-left: 18px;
-      position: relative;
-      line-height: 1.7;
-    }
+            .modal-task-list li {
+                font-size: 14px;
+                color: var(--text-secondary);
+                padding-left: 18px;
+                position: relative;
+                line-height: 1.7;
+            }
 
-    .modal-task-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
+            .modal-task-list li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: var(--accent);
+            }
 
-    .modal-tool-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+            .modal-tool-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
 
-    .tool-badge {
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 8px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      color: var(--text-primary);
-      letter-spacing: 0.02em;
-    }
+            .tool-badge {
+                font-size: 12px;
+                font-weight: 600;
+                padding: 6px 16px;
+                border-radius: 8px;
+                background: var(--bg-secondary);
+                border: 1px solid var(--border);
+                color: var(--text-primary);
+                letter-spacing: 0.02em;
+            }
 
-    .modal-confidential {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 24px;
-      text-align: center;
-    }
+            .modal-confidential {
+                background: var(--bg-secondary);
+                border: 1px solid var(--border);
+                border-radius: 12px;
+                padding: 32px 24px;
+                text-align: center;
+            }
 
-    .modal-confidential .lock-text {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      letter-spacing: 0.1em;
-    }
+            .modal-confidential .lock-text {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--text-muted);
+                margin-bottom: 12px;
+                letter-spacing: 0.1em;
+            }
 
-    .modal-confidential p {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
+            .modal-confidential p {
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.8;
+            }
 
-    .modal-gallery {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
+            .modal-gallery {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+            }
 
-    .gallery-item-label {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-    }
+            .gallery-item-label {
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--text-primary);
+                margin-bottom: 6px;
+            }
 
-    .gallery-item-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
+            .gallery-item-desc {
+                font-size: 13px;
+                color: var(--text-muted);
+                line-height: 1.7;
+                margin-bottom: 14px;
+            }
 
-    .gallery-img-wrap {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
+            .gallery-img-wrap {
+                border-radius: 12px;
+                overflow: hidden;
+                border: 1px solid var(--border);
+            }
 
-    .gallery-img-wrap img {
-      width: 100%;
-      display: block;
-    }
+            .gallery-img-wrap img {
+                width: 100%;
+                display: block;
+            }
 
-    .gallery-sub-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-    }
+            .gallery-sub-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                margin-top: 10px;
+            }
 
-    .gallery-sub-grid img {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      display: block;
-      object-fit: cover;
-      aspect-ratio: 4/3;
-    }
+            .gallery-sub-grid img {
+                width: 100%;
+                border-radius: 8px;
+                border: 1px solid var(--border);
+                display: block;
+                object-fit: cover;
+                aspect-ratio: 4/3;
+            }
 
-    @media (max-width: 768px) {
-      .modal-header {
-        padding: 32px 24px 28px;
-      }
+            @media (max-width: 768px) {
+                .modal-header {
+                    padding: 32px 24px 28px;
+                }
 
-      .modal-body {
-        padding: 28px 24px;
-      }
+                .modal-body {
+                    padding: 28px 24px;
+                }
 
-      .modal-title {
-        font-size: 20px;
-      }
+                .modal-title {
+                    font-size: 20px;
+                }
 
-      .gallery-sub-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+                .gallery-sub-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        FOOTER
     ══════════════════════════════════════════ */
-    .footer {
-      padding: 64px 0;
-      background: var(--bg-primary);
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
+            .footer {
+                padding: 64px 0;
+                background: var(--bg-primary);
+                border-top: 1px solid var(--border);
+                text-align: center;
+            }
 
-    .footer-msg {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
-    }
+            .footer-msg {
+                font-size: 14px;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+                letter-spacing: 0.02em;
+            }
 
-    .footer-copy {
-      font-size: 12px;
-      color: var(--text-muted);
-      opacity: 0.5;
-    }
+            .footer-copy {
+                font-size: 12px;
+                color: var(--text-muted);
+                opacity: 0.5;
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        SCROLL REVEAL
     ══════════════════════════════════════════ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+            .reveal {
+                opacity: 0;
+                transform: translateY(32px);
+                transition:
+                    opacity 0.7s ease,
+                    transform 0.7s ease;
+            }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+            .reveal.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    .reveal-stagger>* {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
+            .reveal-stagger > * {
+                opacity: 0;
+                transform: translateY(24px);
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+            }
 
-    .reveal-stagger.visible>*:nth-child(1) {
-      transition-delay: 0s;
-    }
+            .reveal-stagger.visible > *:nth-child(1) {
+                transition-delay: 0s;
+            }
 
-    .reveal-stagger.visible>*:nth-child(2) {
-      transition-delay: 0.1s;
-    }
+            .reveal-stagger.visible > *:nth-child(2) {
+                transition-delay: 0.1s;
+            }
 
-    .reveal-stagger.visible>*:nth-child(3) {
-      transition-delay: 0.15s;
-    }
+            .reveal-stagger.visible > *:nth-child(3) {
+                transition-delay: 0.15s;
+            }
 
-    .reveal-stagger.visible>*:nth-child(4) {
-      transition-delay: 0.2s;
-    }
+            .reveal-stagger.visible > *:nth-child(4) {
+                transition-delay: 0.2s;
+            }
 
-    .reveal-stagger.visible>* {
-      opacity: 1;
-      transform: translateY(0);
-    }
+            .reveal-stagger.visible > * {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    /* ══════════════════════════════════════════
+            /* ══════════════════════════════════════════
        SCROLLBAR
     ══════════════════════════════════════════ */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
 
-    ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
+            ::-webkit-scrollbar-track {
+                background: var(--bg-secondary);
+            }
 
-    ::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
-      border-radius: 99px;
-    }
+            ::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 99px;
+            }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
-    }
-  </style>
-</head>
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--accent);
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
+        <!-- GNB -->
+        <nav class="nav" aria-label="주 메뉴">
+            <div class="nav-inner">
+                <span class="nav-logo">KIM SEUNGGYU</span>
+                <button
+                    class="nav-toggle"
+                    id="navToggle"
+                    aria-label="메뉴 열기/닫기"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#competency">Competency</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </div>
+        </nav>
 
-  <!-- GNB -->
-  <nav class="nav" aria-label="주 메뉴">
-    <div class="nav-inner">
-      <span class="nav-logo">KIM SEUNGGYU</span>
-      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기/닫기">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#competency">Competency</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#works">Works</a></li>
-      </ul>
-    </div>
-  </nav>
+        <!-- SECTION 1: HERO / PROFILE -->
+        <section class="hero" id="profile" aria-label="프로필">
+            <div class="hero-dots"></div>
+            <div class="hero-inner">
+                <div>
+                    <span class="hero-eyebrow"
+                        >SI Planner &middot; Portfolio 2026</span
+                    >
+                    <h1 class="hero-name">
+                        김승규<span class="accent">.</span>
+                    </h1>
+                    <p class="hero-title">SI 기획 전문가 &nbsp;|&nbsp; 7년차</p>
+                    <p class="hero-desc">
+                        체계적 요구사항 분석과 설계를 통해 프로젝트 리스크를
+                        선제적으로 관리하는 SI 기획 전문가.<br />
+                        공공·유통·통신 등 다양한 도메인에서 검증된 기획 역량을
+                        보유하고 있습니다.
+                    </p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-photo-wrap">
+                        <img
+                            src="assets/profile.png"
+                            alt="김승규 프로필 사진"
+                            class="profile-photo"
+                        />
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-row">
+                            <span class="profile-key">성명</span>
+                            <span class="profile-val"
+                                >김승규 (Kim Seung-gyu)</span
+                            >
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">연령</span>
+                            <span class="profile-val">32세</span>
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">현직</span>
+                            <span class="profile-val"
+                                >비티소프트 서비스기획팀 책임</span
+                            >
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">경력</span>
+                            <span class="profile-val">총 7년</span>
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">학력</span>
+                            <span class="profile-val"
+                                >서원대학교 멀티미디어학과</span
+                            >
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">E-Mail</span>
+                            <span class="profile-val"
+                                ><a href="mailto:gimgu4509@gmail.com"
+                                    >gimgu4509@gmail.com</a
+                                ></span
+                            >
+                        </div>
+                        <div class="profile-row">
+                            <span class="profile-key">Tel</span>
+                            <span class="profile-val"
+                                ><a href="tel:01071944509"
+                                    >010-7194-4509</a
+                                ></span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- SECTION 1: HERO / PROFILE -->
-  <section class="hero" id="profile" aria-label="프로필">
-    <div class="hero-dots"></div>
-    <div class="hero-inner">
-      <div>
-        <span class="hero-eyebrow">SI Planner &middot; Portfolio 2026</span>
-        <h1 class="hero-name">김승규<span class="accent">.</span></h1>
-        <p class="hero-title">SI 기획 전문가 &nbsp;|&nbsp; 7년차</p>
-        <p class="hero-desc">
-          체계적 요구사항 분석과 설계를 통해 프로젝트 리스크를 선제적으로 관리하는 SI 기획 전문가.<br>
-          공공·유통·통신 등 다양한 도메인에서 검증된 기획 역량을 보유하고 있습니다.
-        </p>
-      </div>
-      <div class="profile-card">
-        <div class="profile-photo-wrap">
-          <img src="assets/profile.png" alt="김승규 프로필 사진" class="profile-photo" />
+        <!-- SECTION 2: COMPETENCY & TOOLS -->
+        <section
+            class="competency"
+            id="competency"
+            aria-label="핵심 역량 및 도구"
+        >
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">Core Competency</p>
+                    <h2 class="section-title">핵심 역량</h2>
+                </div>
+
+                <div class="comp-grid reveal">
+                    <article class="comp-card">
+                        <p class="comp-num">01</p>
+                        <h3 class="comp-title">SI 프로젝트 전담 설계</h3>
+                        <p class="comp-desc">
+                            요구사항 분석부터 WBS, 화면 설계, 기능 정의까지 기획
+                            전 과정을 단독 주도. 발주처 요구를 구조화된 산출물로
+                            전환하여 개발팀과의 커뮤니케이션 비용을
+                            최소화합니다.
+                        </p>
+                    </article>
+                    <article class="comp-card">
+                        <p class="comp-num">02</p>
+                        <h3 class="comp-title">멀티 도메인 전문성</h3>
+                        <p class="comp-desc">
+                            질병관리청(공공), 롯데홈쇼핑/신세계(유통),
+                            KT(통신/금융) 등 다양한 산업 도메인에서 최적화된
+                            설계를 수행. 각 도메인의 규제 및 표준을 이해하고
+                            적용합니다.
+                        </p>
+                    </article>
+                    <article class="comp-card">
+                        <p class="comp-num">03</p>
+                        <h3 class="comp-title">체계적 산출물 관리</h3>
+                        <p class="comp-desc">
+                            Figma 기반 디자인 시스템, 버전 관리 체계를 갖춘
+                            화면설계서, 데이터 맵핑 자동화. 프로젝트 규모에 맞는
+                            산출물 체계를 설계하고 유지합니다.
+                        </p>
+                    </article>
+                    <article class="comp-card">
+                        <p class="comp-num">04</p>
+                        <h3 class="comp-title">AI 기반 바이브 코딩</h3>
+                        <p class="comp-desc">
+                            AI/LLM 기반 툴을 활용한 바이브 코딩(Vibe Coding)으로
+                            기획 의도를 신속하게 프로토타입으로 구현하고,
+                            개발팀과의 소통 격차를 최소화합니다.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="reveal" style="margin-top: 80px">
+                    <p class="tools-label">Tools & Skills</p>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <svg
+                                    viewBox="0 0 38 38"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="4"
+                                        width="13"
+                                        height="13"
+                                        rx="2"
+                                        fill="#F24E1E"
+                                    />
+                                    <rect
+                                        x="21"
+                                        y="4"
+                                        width="13"
+                                        height="13"
+                                        rx="6.5"
+                                        fill="#FF7262"
+                                    />
+                                    <rect
+                                        x="4"
+                                        y="21"
+                                        width="13"
+                                        height="13"
+                                        rx="2"
+                                        fill="#0ACF83"
+                                    />
+                                    <circle
+                                        cx="27.5"
+                                        cy="27.5"
+                                        r="6.5"
+                                        fill="#1ABCFE"
+                                    />
+                                    <rect
+                                        x="4"
+                                        y="12.5"
+                                        width="13"
+                                        height="13"
+                                        rx="2"
+                                        fill="#A259FF"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="tool-name">Figma</p>
+                            <span class="tool-level">상</span>
+                            <p class="tool-desc">
+                                디자인 시스템 관리(Design System Management) 및
+                                고해상도 프로토타이핑을 통한 이해관계자 의사결정
+                                효율화
+                            </p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <svg
+                                    viewBox="0 0 38 38"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="4"
+                                        width="30"
+                                        height="30"
+                                        rx="3"
+                                        fill="#217346"
+                                    />
+                                    <path
+                                        d="M10 12h6v4h-6zM10 18h6v4h-6zM10 24h6v4h-6zM18 12h6v4h-6zM18 18h6v4h-6zM18 24h6v4h-6zM26 12h2v4h-2zM26 18h2v4h-2zM26 24h2v4h-2z"
+                                        fill="rgba(255,255,255,0.9)"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="tool-name">Excel</p>
+                            <span class="tool-level">상</span>
+                            <p class="tool-desc">
+                                자동화된 데이터 맵핑(Automated Data Mapping) 및
+                                대규모 데이터 마이그레이션 로직 설계
+                            </p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <svg
+                                    viewBox="0 0 38 38"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="4"
+                                        width="30"
+                                        height="30"
+                                        rx="3"
+                                        fill="#D24726"
+                                    />
+                                    <rect
+                                        x="10"
+                                        y="11"
+                                        width="18"
+                                        height="3"
+                                        rx="1"
+                                        fill="rgba(255,255,255,0.9)"
+                                    />
+                                    <rect
+                                        x="10"
+                                        y="17"
+                                        width="14"
+                                        height="2"
+                                        rx="1"
+                                        fill="rgba(255,255,255,0.5)"
+                                    />
+                                    <rect
+                                        x="10"
+                                        y="22"
+                                        width="16"
+                                        height="2"
+                                        rx="1"
+                                        fill="rgba(255,255,255,0.5)"
+                                    />
+                                    <rect
+                                        x="10"
+                                        y="27"
+                                        width="10"
+                                        height="2"
+                                        rx="1"
+                                        fill="rgba(255,255,255,0.5)"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="tool-name">PowerPoint</p>
+                            <span class="tool-level">상</span>
+                            <p class="tool-desc">
+                                SI 표준 산출물 및 기술 제안서 작성, C-Level 대상
+                                전략 보고 역량
+                            </p>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <svg
+                                    viewBox="0 0 38 38"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="4"
+                                        width="30"
+                                        height="30"
+                                        rx="3"
+                                        fill="#2563EB"
+                                    />
+                                    <text
+                                        x="19"
+                                        y="24"
+                                        text-anchor="middle"
+                                        font-family="Space Grotesk, sans-serif"
+                                        font-size="11"
+                                        font-weight="700"
+                                        fill="white"
+                                    >
+                                        HWP
+                                    </text>
+                                </svg>
+                            </div>
+                            <p class="tool-name">HWP</p>
+                            <span class="tool-level">상</span>
+                            <p class="tool-desc">
+                                공공기관(질병관리청 등) 프로젝트의 엄격한 기술
+                                가이드라인 및 과업 지시서 100% 준수
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EXPERIENCE (Sticky) -->
+        <section class="experience" id="experience" aria-label="경력">
+            <div class="container">
+                <div class="exp-layout">
+                    <div class="exp-header reveal">
+                        <p class="section-eyebrow">Career</p>
+                        <h2 class="section-title" style="font-size: 40px">
+                            경력 타임라인
+                        </h2>
+                        <p class="exp-sticky-desc">
+                            위크앤데이에서 SI 기획의 기초를 다지고,
+                            비티소프트에서 공공·유통·통신 대형 프로젝트의 전담
+                            기획자로 성장했습니다.
+                        </p>
+                        <div class="exp-bar">
+                            <div class="exp-bar-labels">
+                                <span class="exp-bar-label exp-bar-label-left"
+                                    >위크앤데이 (30%)</span
+                                >
+                                <span class="exp-bar-label exp-bar-label-right"
+                                    >비티소프트 (70%)</span
+                                >
+                            </div>
+                            <div class="exp-bar-track">
+                                <div class="exp-bar-seg1"></div>
+                                <div class="exp-bar-seg2"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="exp-cards">
+                        <article class="exp-card reveal">
+                            <div class="exp-card-head">
+                                <h3 class="exp-company">위크앤데이</h3>
+                                <span class="exp-rank">주임</span>
+                            </div>
+                            <p class="exp-period">2019.04 &ndash; 2021.09</p>
+                            <p class="exp-role">서비스기획팀 &mdash; SI 기획</p>
+                            <ul class="exp-tasks">
+                                <li>
+                                    고철계량시스템, 라이선스 실용화, 현대모비스
+                                    R&amp;D 솔루션 등 제조/자사 도메인 SI 기획
+                                    수행
+                                </li>
+                                <li>
+                                    요구사항 정의, 화면 설계, 프로세스 정의 등
+                                    기획 산출물 작성 전반 담당
+                                </li>
+                                <li>
+                                    소만사 영업관리시스템 리뉴얼을 통해 내부
+                                    운영 프로세스 표준화 경험 습득
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="exp-card reveal">
+                            <div class="exp-card-head">
+                                <h3 class="exp-company">비티소프트</h3>
+                                <span class="exp-rank">책임</span>
+                            </div>
+                            <p class="exp-period">2022.01 &ndash; 현재</p>
+                            <p class="exp-role">
+                                서비스기획팀 &mdash; SI / 자사 서비스 기획
+                            </p>
+                            <ul class="exp-tasks">
+                                <li>
+                                    질병관리청 국민건강영양조사 시스템 3년 연속
+                                    전담 기획자로 공공 도메인 심화
+                                </li>
+                                <li>
+                                    KT PASS 캐시파이, 신세계 이마트 eCvan,
+                                    롯데홈쇼핑 상품정보 고도화 등 통신/유통 대형
+                                    SI 기획
+                                </li>
+                                <li>
+                                    자사 서비스 웨어닥터, 리플라이 기획 주도
+                                    &mdash; Figma 기반 디자인 시스템 및 버전
+                                    관리 체계 수립
+                                </li>
+                                <li>
+                                    팀 내 기획 프로세스 표준화 및 산출물 품질
+                                    기준 정립
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: WORKS -->
+        <section class="works" id="works" aria-label="프로젝트 갤러리">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">Projects</p>
+                    <h2 class="section-title">프로젝트 갤러리</h2>
+                </div>
+
+                <div class="works-notice reveal" role="note">
+                    주요 프로젝트 산출물은 보안 정책상 비공개입니다. 자사
+                    서비스인 웨어닥터의 산출물을 기획 프로세스 예시로
+                    제시합니다.
+                </div>
+
+                <div
+                    class="filter-tabs reveal"
+                    role="tablist"
+                    aria-label="프로젝트 카테고리 필터"
+                >
+                    <button
+                        class="filter-tab active"
+                        data-filter="all"
+                        role="tab"
+                        aria-selected="true"
+                    >
+                        전체
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="public"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        공공 / 의료
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="retail"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        유통 / 커머스
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="telecom"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        통신 / 금융
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="manufacturing"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        제조 / IoT
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="inhouse"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        자사 서비스
+                    </button>
+                    <button
+                        class="filter-tab"
+                        data-filter="education"
+                        role="tab"
+                        aria-selected="false"
+                    >
+                        교육 / LMS
+                    </button>
+                </div>
+
+                <div class="project-list" id="projectList">
+                    <!-- 01 -->
+                    <div
+                        class="project-row"
+                        data-category="education"
+                        data-project="13"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2026</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                교보문고 리딩트리(LMS) 재구축
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag education"
+                                    >교육 / LMS</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">교보문고</span>
+                        <span class="proj-period">2026.01 ~ 현재</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 02 -->
+                    <div
+                        class="project-row"
+                        data-category="public"
+                        data-project="1"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2025</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                2025년 국민건강영양조사 지원시스템 기능 개선
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag public">공공 / 의료</span>
+                                <span class="proj-tag consecutive"
+                                    >3년 연속 전담</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">질병관리청</span>
+                        <span class="proj-period">2025.07 ~ 2025.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 03 -->
+                    <div
+                        class="project-row"
+                        data-category="inhouse"
+                        data-project="2"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2025</span>
+                        <div class="proj-main">
+                            <p class="proj-title">리플라이 2차 고도화</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag inhouse"
+                                    >자사 서비스</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">비티소프트</span>
+                        <span class="proj-period">2025.05 ~ 2025.07</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 04 -->
+                    <div
+                        class="project-row"
+                        data-category="inhouse"
+                        data-project="3"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2025</span>
+                        <div class="proj-main">
+                            <p class="proj-title">웨어닥터 서비스 기획</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag inhouse"
+                                    >자사 서비스</span
+                                >
+                                <span class="proj-tag public">공공 / 의료</span>
+                            </div>
+                        </div>
+                        <span class="proj-client">비티소프트</span>
+                        <span class="proj-period">2025.03 ~ 2025.05</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 05 -->
+                    <div
+                        class="project-row"
+                        data-category="public"
+                        data-project="4"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2024</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                2024년 국민건강영양조사 지원시스템 기능 개선
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag public">공공 / 의료</span>
+                                <span class="proj-tag consecutive"
+                                    >3년 연속 전담</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">질병관리청</span>
+                        <span class="proj-period">2024.06 ~ 2024.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 06 -->
+                    <div
+                        class="project-row"
+                        data-category="public"
+                        data-project="5"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2023</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                2023년 국민건강영양조사 지원시스템 재설계
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag public">공공 / 의료</span>
+                                <span class="proj-tag consecutive"
+                                    >3년 연속 전담</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">질병관리청</span>
+                        <span class="proj-period">2023.07 ~ 2023.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 07 -->
+                    <div
+                        class="project-row"
+                        data-category="telecom"
+                        data-project="6"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2023</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                KTPASS 캐시파이(Cashify) 시스템
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag telecom"
+                                    >통신 / 금융</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">KT</span>
+                        <span class="proj-period">2023.04 ~ 2023.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 08 -->
+                    <div
+                        class="project-row"
+                        data-category="retail"
+                        data-project="7"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2022</span>
+                        <div class="proj-main">
+                            <p class="proj-title">롯데홈쇼핑 상품정보 고도화</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag retail"
+                                    >유통 / 커머스</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">롯데홈쇼핑</span>
+                        <span class="proj-period">2022.07 ~ 2022.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 09 -->
+                    <div
+                        class="project-row"
+                        data-category="retail"
+                        data-project="8"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2022</span>
+                        <div class="proj-main">
+                            <p class="proj-title">신세계 이마트 eCvan 재구축</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag retail"
+                                    >유통 / 커머스</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">신세계아이앤씨</span>
+                        <span class="proj-period">2022.02 ~ 2022.06</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 10 -->
+                    <div
+                        class="project-row"
+                        data-category="inhouse"
+                        data-project="9"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2020</span>
+                        <div class="proj-main">
+                            <p class="proj-title">영업관리시스템 리뉴얼</p>
+                            <div class="proj-tags">
+                                <span class="proj-tag inhouse"
+                                    >자사 서비스</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">소만사</span>
+                        <span class="proj-period">2020.11 ~ 2021.02</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 11 -->
+                    <div
+                        class="project-row"
+                        data-category="manufacturing"
+                        data-project="10"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2020</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                현대모비스 R&amp;D SW 분석관리 솔루션
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag manufacturing"
+                                    >제조 / IoT</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">현대모비스</span>
+                        <span class="proj-period">2020.07 ~ 2020.10</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 12 -->
+                    <div
+                        class="project-row"
+                        data-category="inhouse"
+                        data-project="11"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2019</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                라이선스 사용량 실용화 시스템
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag inhouse"
+                                    >자사 서비스</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">닥터소프트</span>
+                        <span class="proj-period">2019.09 ~ 2019.12</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+
+                    <!-- 13 -->
+                    <div
+                        class="project-row"
+                        data-category="manufacturing"
+                        data-project="12"
+                        tabindex="0"
+                        role="button"
+                    >
+                        <span class="proj-num">2019</span>
+                        <div class="proj-main">
+                            <p class="proj-title">
+                                고철계량시스템 구축 (스마트 팩토리 ERP)
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag manufacturing"
+                                    >제조 / IoT</span
+                                >
+                            </div>
+                        </div>
+                        <span class="proj-client">대한강업</span>
+                        <span class="proj-period">2019.05 ~ 2019.08</span>
+                        <span class="proj-arrow">&rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer" aria-label="푸터">
+            <div class="container">
+                <p class="footer-msg">Thank you for watching.</p>
+                <p class="footer-copy">
+                    &copy; 2026 Kim Seunggyu. 본 포트폴리오는 2026년 4월
+                    기준으로 작성되었습니다.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Modal -->
+        <div
+            class="modal-overlay"
+            id="modalOverlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <button
+                        class="modal-close"
+                        id="modalClose"
+                        aria-label="모달 닫기"
+                    >
+                        &times;
+                    </button>
+                    <div class="modal-tags" id="modalTags"></div>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta-row" id="modalMeta"></div>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
         </div>
-        <div class="profile-info">
-          <div class="profile-row">
-            <span class="profile-key">성명</span>
-            <span class="profile-val">김승규 (Kim Seung-gyu)</span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">연령</span>
-            <span class="profile-val">32세</span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">현직</span>
-            <span class="profile-val">비티소프트 서비스기획팀 책임</span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">경력</span>
-            <span class="profile-val">총 7년</span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">학력</span>
-            <span class="profile-val">서원대학교 멀티미디어학과</span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">E-Mail</span>
-            <span class="profile-val"><a href="mailto:gimgu4509@gmail.com">gimgu4509@gmail.com</a></span>
-          </div>
-          <div class="profile-row">
-            <span class="profile-key">Tel</span>
-            <span class="profile-val"><a href="tel:01071944509">010-7194-4509</a></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECTION 2: COMPETENCY & TOOLS -->
-  <section class="competency" id="competency" aria-label="핵심 역량 및 도구">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">Core Competency</p>
-        <h2 class="section-title">핵심 역량</h2>
-      </div>
-
-      <div class="comp-grid reveal">
-        <article class="comp-card">
-          <p class="comp-num">01</p>
-          <h3 class="comp-title">SI 프로젝트 전담 설계</h3>
-          <p class="comp-desc">
-            요구사항 분석부터 WBS, 화면 설계, 기능 정의까지 기획 전 과정을 단독 주도. 발주처 요구를 구조화된 산출물로 전환하여 개발팀과의 커뮤니케이션 비용을 최소화합니다.
-          </p>
-        </article>
-        <article class="comp-card">
-          <p class="comp-num">02</p>
-          <h3 class="comp-title">멀티 도메인 전문성</h3>
-          <p class="comp-desc">
-            질병관리청(공공), 롯데홈쇼핑/신세계(유통), KT(통신/금융) 등 다양한 산업 도메인에서 최적화된 설계를 수행. 각 도메인의 규제 및 표준을 이해하고 적용합니다.
-          </p>
-        </article>
-        <article class="comp-card">
-          <p class="comp-num">03</p>
-          <h3 class="comp-title">체계적 산출물 관리</h3>
-          <p class="comp-desc">
-            Figma 기반 디자인 시스템, 버전 관리 체계를 갖춘 화면설계서, 데이터 맵핑 자동화. 프로젝트 규모에 맞는 산출물 체계를 설계하고 유지합니다.
-          </p>
-        </article>
-        <article class="comp-card">
-          <p class="comp-num">04</p>
-          <h3 class="comp-title">AI 기반 바이브 코딩</h3>
-          <p class="comp-desc">
-            AI/LLM 기반 툴을 활용한 바이브 코딩(Vibe Coding)으로 기획 의도를 신속하게 프로토타입으로 구현하고, 개발팀과의 소통 격차를 최소화합니다.
-          </p>
-        </article>
-      </div>
-
-      <div class="reveal" style="margin-top: 80px;">
-        <p class="tools-label">Tools & Skills</p>
-        <div class="tools-grid">
-          <div class="tool-item">
-            <div class="tool-icon">
-              <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="13" height="13" rx="2" fill="#F24E1E" />
-                <rect x="21" y="4" width="13" height="13" rx="6.5" fill="#FF7262" />
-                <rect x="4" y="21" width="13" height="13" rx="2" fill="#0ACF83" />
-                <circle cx="27.5" cy="27.5" r="6.5" fill="#1ABCFE" />
-                <rect x="4" y="12.5" width="13" height="13" rx="2" fill="#A259FF" />
-              </svg>
-            </div>
-            <p class="tool-name">Figma</p>
-            <span class="tool-level">상</span>
-            <p class="tool-desc">디자인 시스템 관리(Design System Management) 및 고해상도 프로토타이핑을 통한 이해관계자 의사결정 효율화</p>
-          </div>
-          <div class="tool-item">
-            <div class="tool-icon">
-              <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="30" height="30" rx="3" fill="#217346" />
-                <path
-                  d="M10 12h6v4h-6zM10 18h6v4h-6zM10 24h6v4h-6zM18 12h6v4h-6zM18 18h6v4h-6zM18 24h6v4h-6zM26 12h2v4h-2zM26 18h2v4h-2zM26 24h2v4h-2z"
-                  fill="rgba(255,255,255,0.9)" />
-              </svg>
-            </div>
-            <p class="tool-name">Excel</p>
-            <span class="tool-level">상</span>
-            <p class="tool-desc">자동화된 데이터 맵핑(Automated Data Mapping) 및 대규모 데이터 마이그레이션 로직 설계</p>
-          </div>
-          <div class="tool-item">
-            <div class="tool-icon">
-              <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="30" height="30" rx="3" fill="#D24726" />
-                <rect x="10" y="11" width="18" height="3" rx="1" fill="rgba(255,255,255,0.9)" />
-                <rect x="10" y="17" width="14" height="2" rx="1" fill="rgba(255,255,255,0.5)" />
-                <rect x="10" y="22" width="16" height="2" rx="1" fill="rgba(255,255,255,0.5)" />
-                <rect x="10" y="27" width="10" height="2" rx="1" fill="rgba(255,255,255,0.5)" />
-              </svg>
-            </div>
-            <p class="tool-name">PowerPoint</p>
-            <span class="tool-level">상</span>
-            <p class="tool-desc">SI 표준 산출물 및 기술 제안서 작성, C-Level 대상 전략 보고 역량</p>
-          </div>
-          <div class="tool-item">
-            <div class="tool-icon">
-              <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="4" y="4" width="30" height="30" rx="3" fill="#2563EB" />
-                <text x="19" y="24" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11"
-                  font-weight="700" fill="white">HWP</text>
-              </svg>
-            </div>
-            <p class="tool-name">HWP</p>
-            <span class="tool-level">상</span>
-            <p class="tool-desc">공공기관(질병관리청 등) 프로젝트의 엄격한 기술 가이드라인 및 과업 지시서 100% 준수</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: EXPERIENCE (Sticky) -->
-  <section class="experience" id="experience" aria-label="경력">
-    <div class="container">
-      <div class="exp-layout">
-        <div class="exp-sticky">
-          <p class="section-eyebrow">Career</p>
-          <h2 class="section-title" style="font-size:40px;">Experience</h2>
-          <div class="exp-bar">
-            <div class="exp-bar-track">
-              <div class="exp-bar-seg1"></div>
-              <div class="exp-bar-seg2"></div>
-            </div>
-          </div>
-          <p class="exp-sticky-desc">
-            위크앤데이에서 SI 기획의 기초를 다지고, 비티소프트에서 공공·유통·통신 대형 프로젝트의 전담 기획자로 성장했습니다.
-          </p>
-        </div>
-
-        <div class="exp-cards">
-          <article class="exp-card reveal">
-            <div class="exp-card-head">
-              <h3 class="exp-company">비티소프트</h3>
-              <span class="exp-rank">책임</span>
-            </div>
-            <p class="exp-period">2021.09 &ndash; 현재</p>
-            <p class="exp-role">서비스기획팀 &mdash; SI / 자사 서비스 기획</p>
-            <ul class="exp-tasks">
-              <li>질병관리청 국민건강영양조사 시스템 3년 연속 전담 기획자로 공공 도메인 심화</li>
-              <li>KT PASS 캐시파이, 신세계 이마트 eCvan, 롯데홈쇼핑 상품정보 고도화 등 통신/유통 대형 SI 기획</li>
-              <li>자사 서비스 웨어닥터, 리플라이 기획 주도 &mdash; Figma 기반 디자인 시스템 및 버전 관리 체계 수립</li>
-              <li>팀 내 기획 프로세스 표준화 및 산출물 품질 기준 정립</li>
-            </ul>
-          </article>
-
-          <article class="exp-card reveal">
-            <div class="exp-card-head">
-              <h3 class="exp-company">위크앤데이</h3>
-              <span class="exp-rank">주임</span>
-            </div>
-            <p class="exp-period">2019.03 &ndash; 2021.08</p>
-            <p class="exp-role">서비스기획팀 &mdash; SI 기획</p>
-            <ul class="exp-tasks">
-              <li>고철계량시스템, 라이선스 실용화, 현대모비스 R&amp;D 솔루션 등 제조/자사 도메인 SI 기획 수행</li>
-              <li>요구사항 정의, 화면 설계, 프로세스 정의 등 기획 산출물 작성 전반 담당</li>
-              <li>소만사 영업관리시스템 리뉴얼을 통해 내부 운영 프로세스 표준화 경험 습득</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: WORKS -->
-  <section class="works" id="works" aria-label="프로젝트 갤러리">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-eyebrow">Projects</p>
-        <h2 class="section-title">Works</h2>
-      </div>
-
-      <div class="works-notice reveal" role="note">
-        주요 프로젝트 산출물은 보안 정책상 비공개입니다. 자사 서비스인 웨어닥터의 산출물을 기획 프로세스 예시로 제시합니다.
-      </div>
-
-      <div class="filter-tabs reveal" role="tablist" aria-label="프로젝트 카테고리 필터">
-        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">전체</button>
-        <button class="filter-tab" data-filter="public" role="tab" aria-selected="false">공공 / 의료</button>
-        <button class="filter-tab" data-filter="retail" role="tab" aria-selected="false">유통 / 커머스</button>
-        <button class="filter-tab" data-filter="telecom" role="tab" aria-selected="false">통신 / 금융</button>
-        <button class="filter-tab" data-filter="manufacturing" role="tab" aria-selected="false">제조 / IoT</button>
-        <button class="filter-tab" data-filter="inhouse" role="tab" aria-selected="false">자사 서비스</button>
-      </div>
-
-      <div class="project-list" id="projectList">
-
-        <!-- 01 -->
-        <div class="project-row" data-category="public" data-project="1" tabindex="0" role="button">
-          <span class="proj-num">2025</span>
-          <div class="proj-main">
-            <p class="proj-title">2025년 국민건강영양조사 지원시스템 기능 개선</p>
-            <div class="proj-tags">
-              <span class="proj-tag public">공공 / 의료</span>
-              <span class="proj-tag consecutive">3년 연속 전담</span>
-            </div>
-          </div>
-          <span class="proj-client">질병관리청</span>
-          <span class="proj-period">2025.07 ~ 현재</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 02 -->
-        <div class="project-row" data-category="inhouse" data-project="2" tabindex="0" role="button">
-          <span class="proj-num">2025</span>
-          <div class="proj-main">
-            <p class="proj-title">리플라이 2차 고도화</p>
-            <div class="proj-tags">
-              <span class="proj-tag inhouse">자사 서비스</span>
-            </div>
-          </div>
-          <span class="proj-client">비티소프트</span>
-          <span class="proj-period">2025.05 ~ 2025.07</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 03 -->
-        <div class="project-row" data-category="inhouse" data-project="3" tabindex="0" role="button">
-          <span class="proj-num">2025</span>
-          <div class="proj-main">
-            <p class="proj-title">웨어닥터 서비스 기획</p>
-            <div class="proj-tags">
-              <span class="proj-tag inhouse">자사 서비스</span>
-              <span class="proj-tag public">공공 / 의료</span>
-            </div>
-          </div>
-          <span class="proj-client">비티소프트</span>
-          <span class="proj-period">2025.03 ~ 2025.05</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 04 -->
-        <div class="project-row" data-category="public" data-project="4" tabindex="0" role="button">
-          <span class="proj-num">2024</span>
-          <div class="proj-main">
-            <p class="proj-title">2024년 국민건강영양조사 지원시스템 기능 개선</p>
-            <div class="proj-tags">
-              <span class="proj-tag public">공공 / 의료</span>
-              <span class="proj-tag consecutive">3년 연속 전담</span>
-            </div>
-          </div>
-          <span class="proj-client">질병관리청</span>
-          <span class="proj-period">2024.06 ~ 2024.12</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 05 -->
-        <div class="project-row" data-category="public" data-project="5" tabindex="0" role="button">
-          <span class="proj-num">2023</span>
-          <div class="proj-main">
-            <p class="proj-title">2023년 국민건강영양조사 지원시스템 재설계</p>
-            <div class="proj-tags">
-              <span class="proj-tag public">공공 / 의료</span>
-              <span class="proj-tag consecutive">3년 연속 전담</span>
-            </div>
-          </div>
-          <span class="proj-client">질병관리청</span>
-          <span class="proj-period">2023.07 ~ 2023.12</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 06 -->
-        <div class="project-row" data-category="telecom" data-project="6" tabindex="0" role="button">
-          <span class="proj-num">2023</span>
-          <div class="proj-main">
-            <p class="proj-title">KTPASS 캐시파이(Cashify) 시스템</p>
-            <div class="proj-tags">
-              <span class="proj-tag telecom">통신 / 금융</span>
-            </div>
-          </div>
-          <span class="proj-client">KT</span>
-          <span class="proj-period">2023.04 ~ 2023.12</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 07 -->
-        <div class="project-row" data-category="retail" data-project="7" tabindex="0" role="button">
-          <span class="proj-num">2022</span>
-          <div class="proj-main">
-            <p class="proj-title">롯데홈쇼핑 상품정보 고도화</p>
-            <div class="proj-tags">
-              <span class="proj-tag retail">유통 / 커머스</span>
-            </div>
-          </div>
-          <span class="proj-client">롯데홈쇼핑</span>
-          <span class="proj-period">2022.07 ~ 2022.12</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 08 -->
-        <div class="project-row" data-category="retail" data-project="8" tabindex="0" role="button">
-          <span class="proj-num">2022</span>
-          <div class="proj-main">
-            <p class="proj-title">신세계 이마트 eCvan 재구축</p>
-            <div class="proj-tags">
-              <span class="proj-tag retail">유통 / 커머스</span>
-            </div>
-          </div>
-          <span class="proj-client">신세계아이앤씨</span>
-          <span class="proj-period">2022.02 ~ 2022.06</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 09 -->
-        <div class="project-row" data-category="inhouse" data-project="9" tabindex="0" role="button">
-          <span class="proj-num">2020</span>
-          <div class="proj-main">
-            <p class="proj-title">영업관리시스템 리뉴얼</p>
-            <div class="proj-tags">
-              <span class="proj-tag inhouse">자사 서비스</span>
-            </div>
-          </div>
-          <span class="proj-client">소만사</span>
-          <span class="proj-period">2020.11 ~ 2021.02</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 10 -->
-        <div class="project-row" data-category="manufacturing" data-project="10" tabindex="0" role="button">
-          <span class="proj-num">2020</span>
-          <div class="proj-main">
-            <p class="proj-title">현대모비스 R&amp;D SW 분석관리 솔루션</p>
-            <div class="proj-tags">
-              <span class="proj-tag manufacturing">제조 / IoT</span>
-            </div>
-          </div>
-          <span class="proj-client">현대모비스</span>
-          <span class="proj-period">2020.07 ~ 2020.10</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 11 -->
-        <div class="project-row" data-category="inhouse" data-project="11" tabindex="0" role="button">
-          <span class="proj-num">2019</span>
-          <div class="proj-main">
-            <p class="proj-title">라이선스 사용량 실용화 시스템</p>
-            <div class="proj-tags">
-              <span class="proj-tag inhouse">자사 서비스</span>
-            </div>
-          </div>
-          <span class="proj-client">닥터소프트</span>
-          <span class="proj-period">2019.09 ~ 2019.12</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-        <!-- 12 -->
-        <div class="project-row" data-category="manufacturing" data-project="12" tabindex="0" role="button">
-          <span class="proj-num">2019</span>
-          <div class="proj-main">
-            <p class="proj-title">고철계량시스템 구축 (스마트 팩토리 ERP)</p>
-            <div class="proj-tags">
-              <span class="proj-tag manufacturing">제조 / IoT</span>
-            </div>
-          </div>
-          <span class="proj-client">대한강업</span>
-          <span class="proj-period">2019.05 ~ 2019.08</span>
-          <span class="proj-arrow">&rarr;</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" aria-label="푸터">
-    <div class="container">
-      <p class="footer-msg">Thank you for watching.</p>
-      <p class="footer-copy">&copy; 2026 Kim Seunggyu. 본 포트폴리오는 2026년 4월 기준으로 작성되었습니다.</p>
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <button class="modal-close" id="modalClose" aria-label="모달 닫기">&times;</button>
-        <div class="modal-tags" id="modalTags"></div>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <div class="modal-meta-row" id="modalMeta"></div>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <script>
-    /* ─────────────────────────────────────
+        <script>
+            /* ─────────────────────────────────────
        Project Data
     ───────────────────────────────────── */
-    var PROJECTS = {
-      1: {
-        title: '2025년 국민건강영양조사 지원시스템 기능 개선',
-        period: '2025.07 ~ 현재',
-        client: '질병관리청',
-        team: '기획1, 디자인1, 개발9 (총 11명)',
-        domain: 'public', domainLabel: '공공 / 의료',
-        consecutive: true,
-        background: '국민건강영양조사 데이터 수집 및 관리 시스템의 연간 기능 개선 사업.',
-        tasks: [
-          '공공 데이터 표준 가이드라인 기반 기능 고도화 총괄',
-          '기존 시스템 운영 프로세스 분석 및 최적화',
-          '요구사항 분석, 기능 정의서 작성, 화면 설계',
-          '범정부 기술 표준 준수 검증'
-        ],
-        tools: ['HWP', 'Excel', 'Figma'],
-        hasAssets: false
-      },
-      2: {
-        title: '리플라이 2차 고도화',
-        period: '2025.05 ~ 2025.07',
-        client: '비티소프트',
-        team: '기획1, 디자인1, 개발3 (총 5명)',
-        domain: 'inhouse', domainLabel: '자사 서비스',
-        background: '비티소프트 자사 서비스 리플라이의 2차 고도화. 사용자 피드백을 반영한 기능 확장.',
-        tasks: [
-          '자사 서비스 확장 전략 수립',
-          '핵심 기능 상세 설계',
-          '사용자 피드백 데이터 기반 UI/UX 개편 주도',
-          '요구사항 정의, 화면 설계서 작성'
-        ],
-        tools: ['Figma', 'PPT'],
-        hasAssets: false
-      },
-      3: {
-        title: '웨어닥터 서비스 기획',
-        period: '2025.03 ~ 2025.05',
-        client: '비티소프트',
-        team: '기획2, 디자인1, 개발3 (총 6명)',
-        domain: 'inhouse', domainLabel: '자사 서비스',
-        extraDomain: { key: 'public', label: '공공 / 의료' },
-        background: '만성질환 관리가 필요한 환자들이 웨어러블 기기와 연동하여 건강 데이터(혈압, BMI, 활동량 등)를 추적하고, 의료기관의 운동 지침을 일상에서 실천할 수 있도록 돕는 모바일 헬스케어 서비스.',
-        tasks: [
-          '신규 서비스 비즈니스 로직 및 전체 아키텍처 설계',
-          '요구사항 정의서 작성 (엑셀 기반 체계적 분류)',
-          '프로세스 정의서 작성 (DB/Admin/App 간 데이터 흐름 도식화)',
-          'Figma 기반 화면설계서 작성 (버전 관리 v1.5~v1.8)',
-          '데이터 연동 규격 설계'
-        ],
-        tools: ['Figma', 'PPT'],
-        hasAssets: true
-      },
-      4: {
-        title: '2024년 국민건강영양조사 지원시스템 기능 개선',
-        period: '2024.06 ~ 2024.12',
-        client: '질병관리청',
-        team: '기획3, 디자인1, 개발10 (총 14명)',
-        domain: 'public', domainLabel: '공공 / 의료',
-        consecutive: true,
-        background: '국민건강영양조사 시스템의 연간 기능 개선. 범정부 기술 표준 준수 및 서비스 안정성 강화 목적.',
-        tasks: [
-          '범정부 기술 표준 준수 기능 설계',
-          '대국민 서비스 안정성 강화 방안 설계',
-          '요구사항 분석, 기능 정의, 화면 설계',
-          '사용자 데이터 입력 프로세스 개선'
-        ],
-        tools: ['HWP', 'Excel', 'Figma'],
-        hasAssets: false
-      },
-      5: {
-        title: '2023년 국민건강영양조사 지원시스템 재설계',
-        period: '2023.07 ~ 2023.12',
-        client: '질병관리청',
-        team: '기획1, 디자인1, 개발7 (총 9명)',
-        domain: 'public', domainLabel: '공공 / 의료',
-        consecutive: true,
-        background: '노후화된 국민건강영양조사 시스템의 전면 재설계. 기존 시스템 한계를 극복하기 위한 구조 변경.',
-        tasks: [
-          '시스템 전면 재설계 기획 총괄',
-          '공공기관 표준 UI/UX 가이드 반영',
-          '접근성(웹 접근성) 강화 설계',
-          '정보구조(IA) 재설계, 화면 설계'
-        ],
-        tools: ['PPT', 'HWP'],
-        hasAssets: false
-      },
-      6: {
-        title: 'KTPASS 캐시파이(Cashify) 시스템',
-        period: '2023.04 ~ 2023.12',
-        client: 'KT',
-        team: '기획3, 개발8 (총 11명)',
-        domain: 'telecom', domainLabel: '통신 / 금융',
-        background: 'KT의 모바일 결제/포인트 정산 시스템 구축. 복잡한 금융 settlement 로직이 핵심.',
-        tasks: [
-          '복잡한 금융 로직의 기술 타당성 검증 및 설계',
-          '정산 프로세스 정의, 데이터 흐름 설계',
-          '요구사항 분석, 기능 정의서 작성'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      },
-      7: {
-        title: '롯데홈쇼핑 상품정보 고도화',
-        period: '2022.07 ~ 2022.12',
-        client: '롯데홈쇼핑',
-        team: '기획3, 개발8 (총 11명)',
-        domain: 'retail', domainLabel: '유통 / 커머스',
-        background: '롯데홈쇼핑의 대규모 상품 데이터 관리 시스템 고도화. 트래픽 증가에 따른 데이터 처리 효율화.',
-        tasks: [
-          '대규모 상품 데이터 처리 프로세스 최적화',
-          '빅데이터 기반 상품 카테고리 매핑 로직 표준화 설계',
-          '상품 정보 체계 재정의, 데이터 마이그레이션 설계'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      },
-      8: {
-        title: '신세계 이마트 eCvan 재구축',
-        period: '2022.02 ~ 2022.06',
-        client: '신세계아이앤씨',
-        team: '기획3, 디자인1 (총 4명+)',
-        domain: 'retail', domainLabel: '유통 / 커머스',
-        background: '이마트의 B2B 공급망 관리 시스템(eCvan) 전면 재구축. 협력사 간 거래 효율 향상 목적.',
-        tasks: [
-          'B2B 공급망 관리 시스템의 데이터 아키텍처 재설계',
-          '협력사 간 거래 효율 향상을 위한 인터페이스 고도화',
-          '데이터 흐름 설계, 요구사항 정의, 화면 설계'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      },
-      9: {
-        title: '영업관리시스템 리뉴얼',
-        period: '2020.11 ~ 2021.02',
-        client: '소만사',
-        team: '기획1',
-        domain: 'inhouse', domainLabel: '자사 서비스',
-        background: '소만사 내부 영업관리시스템의 노후화에 따른 리뉴얼. 전사 시스템 통합에 맞춘 재정비.',
-        tasks: [
-          '내부 영업 자산 관리 프로세스 표준화',
-          '대시보드 설계',
-          '전사 시스템 통합에 따른 사용자 권한 체계 재정립',
-          '화면 설계, 기능 정의'
-        ],
-        tools: ['PPT', 'Figma'],
-        hasAssets: false
-      },
-      10: {
-        title: '현대모비스 R&D SW 분석관리 솔루션',
-        period: '2020.07 ~ 2020.10',
-        client: '현대모비스 (정부과제)',
-        team: '비공개',
-        domain: 'manufacturing', domainLabel: '제조 / IoT',
-        background: '고객사 컨소시엄의 일원으로 정부과제에 참여. 현대모비스 연구소의 SW 형상 관리 및 분석 자동화 솔루션 구축.',
-        tasks: [
-          '연구소 내 SW 형상 관리 및 분석 자동화 로직 설계',
-          '요구사항 분석, 프로세스 정의, 화면 설계'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      },
-      11: {
-        title: '라이선스 사용량 실용화 시스템',
-        period: '2019.09 ~ 2019.12',
-        client: '닥터소프트 (정부과제)',
-        team: '비공개',
-        domain: 'inhouse', domainLabel: '자사 서비스',
-        background: '고객사 컨소시엄의 일원으로 정부과제에 참여. SW 라이선스 사용량을 실시간으로 추적하여 자원 관리를 효율화.',
-        tasks: [
-          '실시간 라이선스 트래킹 로직 설계',
-          '요구사항 분석, 화면 설계, 데이터 모니터링 대시보드 설계'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      },
-      12: {
-        title: '고철계량시스템 구축 (스마트 팩토리 ERP)',
-        period: '2019.05 ~ 2019.08',
-        client: '대한강업',
-        team: '기획2, 디자인1, 개발5 (총 8명)',
-        domain: 'manufacturing', domainLabel: '제조 / IoT',
-        background: '고철 생산 현장의 계량 데이터를 IoT로 수집하여 ERP 시스템과 연동하는 스마트 팩토리 프로젝트.',
-        tasks: [
-          '생산 현장 데이터(IoT) 수집 및 ERP 연동 인터페이스 설계',
-          '요구사항 분석, 데이터 흐름 설계, 화면 설계'
-        ],
-        tools: ['PPT', 'Excel', 'Word'],
-        hasAssets: false
-      }
-    };
+            var PROJECTS = {
+                1: {
+                    title: "2025년 국민건강영양조사 지원시스템 기능 개선",
+                    period: "2025.07 ~ 2025.12",
+                    client: "질병관리청",
+                    team: "기획1, 디자인1, 개발9 (총 11명)",
+                    domain: "public",
+                    domainLabel: "공공 / 의료",
+                    consecutive: true,
+                    background:
+                        "국민건강영양조사 데이터 수집 및 관리 시스템의 연간 기능 개선 사업.",
+                    tasks: [
+                        "공공 데이터 표준 가이드라인 기반 기능 고도화 총괄",
+                        "기존 시스템 운영 프로세스 분석 및 최적화",
+                        "요구사항 분석, 기능 정의서 작성, 화면 설계",
+                        "범정부 기술 표준 준수 검증",
+                    ],
+                    tools: ["HWP", "Excel", "Figma"],
+                    hasAssets: false,
+                },
+                2: {
+                    title: "리플라이 2차 고도화",
+                    period: "2025.05 ~ 2025.07",
+                    client: "비티소프트",
+                    team: "기획1, 디자인1, 개발3 (총 5명)",
+                    domain: "inhouse",
+                    domainLabel: "자사 서비스",
+                    background:
+                        "비티소프트 자사 서비스 리플라이의 2차 고도화. 사용자 피드백을 반영한 기능 확장.",
+                    tasks: [
+                        "자사 서비스 확장 전략 수립",
+                        "핵심 기능 상세 설계",
+                        "사용자 피드백 데이터 기반 UI/UX 개편 주도",
+                        "요구사항 정의, 화면 설계서 작성",
+                    ],
+                    tools: ["Figma", "PPT"],
+                    hasAssets: false,
+                },
+                3: {
+                    title: "웨어닥터 서비스 기획",
+                    period: "2025.03 ~ 2025.05",
+                    client: "비티소프트",
+                    team: "기획2, 디자인1, 개발3 (총 6명)",
+                    domain: "inhouse",
+                    domainLabel: "자사 서비스",
+                    extraDomain: { key: "public", label: "공공 / 의료" },
+                    background:
+                        "만성질환 관리가 필요한 환자들이 웨어러블 기기와 연동하여 건강 데이터(혈압, BMI, 활동량 등)를 추적하고, 의료기관의 운동 지침을 일상에서 실천할 수 있도록 돕는 모바일 헬스케어 서비스.",
+                    tasks: [
+                        "신규 서비스 비즈니스 로직 및 전체 아키텍처 설계",
+                        "요구사항 정의서 작성 (엑셀 기반 체계적 분류)",
+                        "프로세스 정의서 작성 (DB/Admin/App 간 데이터 흐름 도식화)",
+                        "Figma 기반 화면설계서 작성 (버전 관리 v1.5~v1.8)",
+                        "데이터 연동 규격 설계",
+                    ],
+                    tools: ["Figma", "PPT"],
+                    hasAssets: true,
+                },
+                4: {
+                    title: "2024년 국민건강영양조사 지원시스템 기능 개선",
+                    period: "2024.06 ~ 2024.12",
+                    client: "질병관리청",
+                    team: "기획3, 디자인1, 개발10 (총 14명)",
+                    domain: "public",
+                    domainLabel: "공공 / 의료",
+                    consecutive: true,
+                    background:
+                        "국민건강영양조사 시스템의 연간 기능 개선. 범정부 기술 표준 준수 및 서비스 안정성 강화 목적.",
+                    tasks: [
+                        "범정부 기술 표준 준수 기능 설계",
+                        "대국민 서비스 안정성 강화 방안 설계",
+                        "요구사항 분석, 기능 정의, 화면 설계",
+                        "사용자 데이터 입력 프로세스 개선",
+                    ],
+                    tools: ["HWP", "Excel", "Figma"],
+                    hasAssets: false,
+                },
+                5: {
+                    title: "2023년 국민건강영양조사 지원시스템 재설계",
+                    period: "2023.07 ~ 2023.12",
+                    client: "질병관리청",
+                    team: "기획1, 디자인1, 개발7 (총 9명)",
+                    domain: "public",
+                    domainLabel: "공공 / 의료",
+                    consecutive: true,
+                    background:
+                        "노후화된 국민건강영양조사 시스템의 전면 재설계. 기존 시스템 한계를 극복하기 위한 구조 변경.",
+                    tasks: [
+                        "시스템 전면 재설계 기획 총괄",
+                        "공공기관 표준 UI/UX 가이드 반영",
+                        "접근성(웹 접근성) 강화 설계",
+                        "정보구조(IA) 재설계, 화면 설계",
+                    ],
+                    tools: ["PPT", "HWP"],
+                    hasAssets: false,
+                },
+                6: {
+                    title: "KTPASS 캐시파이(Cashify) 시스템",
+                    period: "2023.04 ~ 2023.12",
+                    client: "KT",
+                    team: "기획3, 개발8 (총 11명)",
+                    domain: "telecom",
+                    domainLabel: "통신 / 금융",
+                    background:
+                        "KT의 모바일 결제/포인트 정산 시스템 구축. 복잡한 금융 settlement 로직이 핵심.",
+                    tasks: [
+                        "복잡한 금융 로직의 기술 타당성 검증 및 설계",
+                        "정산 프로세스 정의, 데이터 흐름 설계",
+                        "요구사항 분석, 기능 정의서 작성",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                7: {
+                    title: "롯데홈쇼핑 상품정보 고도화",
+                    period: "2022.07 ~ 2022.12",
+                    client: "롯데홈쇼핑",
+                    team: "기획3, 개발8 (총 11명)",
+                    domain: "retail",
+                    domainLabel: "유통 / 커머스",
+                    background:
+                        "롯데홈쇼핑의 대규모 상품 데이터 관리 시스템 고도화. 트래픽 증가에 따른 데이터 처리 효율화.",
+                    tasks: [
+                        "대규모 상품 데이터 처리 프로세스 최적화",
+                        "빅데이터 기반 상품 카테고리 매핑 로직 표준화 설계",
+                        "상품 정보 체계 재정의, 데이터 마이그레이션 설계",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                8: {
+                    title: "신세계 이마트 eCvan 재구축",
+                    period: "2022.02 ~ 2022.06",
+                    client: "신세계아이앤씨",
+                    team: "기획3, 디자인1 (총 4명+)",
+                    domain: "retail",
+                    domainLabel: "유통 / 커머스",
+                    background:
+                        "이마트의 B2B 공급망 관리 시스템(eCvan) 전면 재구축. 협력사 간 거래 효율 향상 목적.",
+                    tasks: [
+                        "B2B 공급망 관리 시스템의 데이터 아키텍처 재설계",
+                        "협력사 간 거래 효율 향상을 위한 인터페이스 고도화",
+                        "데이터 흐름 설계, 요구사항 정의, 화면 설계",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                9: {
+                    title: "영업관리시스템 리뉴얼",
+                    period: "2020.11 ~ 2021.02",
+                    client: "소만사",
+                    team: "기획1",
+                    domain: "inhouse",
+                    domainLabel: "자사 서비스",
+                    background:
+                        "소만사 내부 영업관리시스템의 노후화에 따른 리뉴얼. 전사 시스템 통합에 맞춘 재정비.",
+                    tasks: [
+                        "내부 영업 자산 관리 프로세스 표준화",
+                        "대시보드 설계",
+                        "전사 시스템 통합에 따른 사용자 권한 체계 재정립",
+                        "화면 설계, 기능 정의",
+                    ],
+                    tools: ["PPT", "Figma"],
+                    hasAssets: false,
+                },
+                10: {
+                    title: "현대모비스 R&D SW 분석관리 솔루션",
+                    period: "2020.07 ~ 2020.10",
+                    client: "현대모비스 (정부과제)",
+                    team: "비공개",
+                    domain: "manufacturing",
+                    domainLabel: "제조 / IoT",
+                    background:
+                        "고객사 컨소시엄의 일원으로 정부과제에 참여. 현대모비스 연구소의 SW 형상 관리 및 분석 자동화 솔루션 구축.",
+                    tasks: [
+                        "연구소 내 SW 형상 관리 및 분석 자동화 로직 설계",
+                        "요구사항 분석, 프로세스 정의, 화면 설계",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                11: {
+                    title: "라이선스 사용량 실용화 시스템",
+                    period: "2019.09 ~ 2019.12",
+                    client: "닥터소프트 (정부과제)",
+                    team: "비공개",
+                    domain: "inhouse",
+                    domainLabel: "자사 서비스",
+                    background:
+                        "고객사 컨소시엄의 일원으로 정부과제에 참여. SW 라이선스 사용량을 실시간으로 추적하여 자원 관리를 효율화.",
+                    tasks: [
+                        "실시간 라이선스 트래킹 로직 설계",
+                        "요구사항 분석, 화면 설계, 데이터 모니터링 대시보드 설계",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                12: {
+                    title: "고철계량시스템 구축 (스마트 팩토리 ERP)",
+                    period: "2019.05 ~ 2019.08",
+                    client: "대한강업",
+                    team: "기획2, 디자인1, 개발5 (총 8명)",
+                    domain: "manufacturing",
+                    domainLabel: "제조 / IoT",
+                    background:
+                        "고철 생산 현장의 계량 데이터를 IoT로 수집하여 ERP 시스템과 연동하는 스마트 팩토리 프로젝트.",
+                    tasks: [
+                        "생산 현장 데이터(IoT) 수집 및 ERP 연동 인터페이스 설계",
+                        "요구사항 분석, 데이터 흐름 설계, 화면 설계",
+                    ],
+                    tools: ["PPT", "Excel", "Word"],
+                    hasAssets: false,
+                },
+                13: {
+                    title: "교보문고 리딩트리(LMS) 재구축",
+                    period: "2026.01 ~ 현재",
+                    client: "교보문고",
+                    team: "기획3, 디자인1, 개발10 (총 14명)",
+                    domain: "education",
+                    domainLabel: "교육 / LMS",
+                    background:
+                        "교보문고의 LMS(학습관리시스템) 리딩트리 재구축 프로젝트. 내부 커뮤니티 및 학습 메뉴 영역의 전면 재설계 수행.",
+                    tasks: [
+                        "리딩트리 내부 커뮤니티 메뉴 재구축 설계",
+                        "학습 메뉴 재구축 설계 (학습 경험 개선)",
+                        "요구사항 분석, 기능 정의서 및 화면 설계서 작성",
+                        "기존 LMS 사용자 플로우 분석 및 개선안 도출",
+                    ],
+                    tools: ["Figma", "PPT"],
+                    hasAssets: false,
+                },
+            };
 
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        Mobile menu toggle
     ───────────────────────────────────── */
-    var navToggle = document.getElementById('navToggle');
-    var navLinks = document.getElementById('navLinks');
+            var navToggle = document.getElementById("navToggle");
+            var navLinks = document.getElementById("navLinks");
 
-    navToggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-    });
+            navToggle.addEventListener("click", function () {
+                navLinks.classList.toggle("open");
+            });
 
-    navLinks.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-      });
-    });
+            navLinks.querySelectorAll("a").forEach(function (a) {
+                a.addEventListener("click", function () {
+                    navLinks.classList.remove("open");
+                });
+            });
 
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        GNB Active State (Intersection Observer)
     ───────────────────────────────────── */
-    var sections = document.querySelectorAll('section[id]');
-    var navAnchors = document.querySelectorAll('.nav-links a');
+            var sections = document.querySelectorAll("section[id]");
+            var navAnchors = document.querySelectorAll(".nav-links a");
 
-    var sectionObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var id = entry.target.getAttribute('id');
-          navAnchors.forEach(function (a) {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-          });
-        }
-      });
-    }, { rootMargin: '-40% 0px -60% 0px' });
+            var sectionObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var id = entry.target.getAttribute("id");
+                            navAnchors.forEach(function (a) {
+                                a.classList.toggle(
+                                    "active",
+                                    a.getAttribute("href") === "#" + id,
+                                );
+                            });
+                        }
+                    });
+                },
+                { rootMargin: "-40% 0px -60% 0px" },
+            );
 
-    sections.forEach(function (sec) { sectionObserver.observe(sec); });
+            sections.forEach(function (sec) {
+                sectionObserver.observe(sec);
+            });
 
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        Scroll Reveal
     ───────────────────────────────────── */
-    var reveals = document.querySelectorAll('.reveal');
+            var reveals = document.querySelectorAll(".reveal");
 
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
+            var revealObserver = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                { threshold: 0.15 },
+            );
 
-    reveals.forEach(function (el) { revealObserver.observe(el); });
+            reveals.forEach(function (el) {
+                revealObserver.observe(el);
+            });
 
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        Filter
     ───────────────────────────────────── */
-    var tabs = document.querySelectorAll('.filter-tab');
-    var rows = document.querySelectorAll('.project-row');
+            var tabs = document.querySelectorAll(".filter-tab");
+            var rows = document.querySelectorAll(".project-row");
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var filter = tab.getAttribute('data-filter');
+            tabs.forEach(function (tab) {
+                tab.addEventListener("click", function () {
+                    var filter = tab.getAttribute("data-filter");
 
-        tabs.forEach(function (t) {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
+                    tabs.forEach(function (t) {
+                        t.classList.remove("active");
+                        t.setAttribute("aria-selected", "false");
+                    });
+                    tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
 
-        rows.forEach(function (row) {
-          var cat = row.getAttribute('data-category');
-          var show = (filter === 'all') || (cat === filter);
-          row.classList.toggle('hidden', !show);
-        });
-      });
-    });
+                    rows.forEach(function (row) {
+                        var cat = row.getAttribute("data-category");
+                        var show = filter === "all" || cat === filter;
+                        row.classList.toggle("hidden", !show);
+                    });
+                });
+            });
 
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        Modal
     ───────────────────────────────────── */
-    var overlay = document.getElementById('modalOverlay');
-    var modalClose = document.getElementById('modalClose');
-    var modalTags = document.getElementById('modalTags');
-    var modalTitle = document.getElementById('modalTitle');
-    var modalMeta = document.getElementById('modalMeta');
-    var modalBody = document.getElementById('modalBody');
+            var overlay = document.getElementById("modalOverlay");
+            var modalClose = document.getElementById("modalClose");
+            var modalTags = document.getElementById("modalTags");
+            var modalTitle = document.getElementById("modalTitle");
+            var modalMeta = document.getElementById("modalMeta");
+            var modalBody = document.getElementById("modalBody");
 
-    function tagHTML(cls, label) {
-      return '<span class="proj-tag ' + cls + '">' + label + '</span>';
-    }
+            function tagHTML(cls, label) {
+                return (
+                    '<span class="proj-tag ' + cls + '">' + label + "</span>"
+                );
+            }
 
-    function esc(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-    }
+            function esc(str) {
+                return String(str)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            }
 
-    function renderModal(p) {
-      var tags = tagHTML(p.domain, p.domainLabel);
-      if (p.extraDomain) tags += ' ' + tagHTML(p.extraDomain.key, p.extraDomain.label);
-      if (p.consecutive) tags += ' <span class="proj-tag consecutive">3년 연속 전담</span>';
-      modalTags.innerHTML = tags;
+            function renderModal(p) {
+                var tags = tagHTML(p.domain, p.domainLabel);
+                if (p.extraDomain)
+                    tags +=
+                        " " + tagHTML(p.extraDomain.key, p.extraDomain.label);
+                if (p.consecutive)
+                    tags +=
+                        ' <span class="proj-tag consecutive">3년 연속 전담</span>';
+                modalTags.innerHTML = tags;
 
-      modalTitle.textContent = p.title;
+                modalTitle.textContent = p.title;
 
-      modalMeta.innerHTML =
-        '<span class="modal-meta-item"><span class="key">기간</span><span class="val">' + esc(p.period) + '</span></span>' +
-        '<span class="modal-meta-item"><span class="key">발주처</span><span class="val">' + esc(p.client) + '</span></span>' +
-        '<span class="modal-meta-item"><span class="key">팀 구성</span><span class="val">' + esc(p.team) + '</span></span>';
+                modalMeta.innerHTML =
+                    '<span class="modal-meta-item"><span class="key">기간</span><span class="val">' +
+                    esc(p.period) +
+                    "</span></span>" +
+                    '<span class="modal-meta-item"><span class="key">발주처</span><span class="val">' +
+                    esc(p.client) +
+                    "</span></span>" +
+                    '<span class="modal-meta-item"><span class="key">팀 구성</span><span class="val">' +
+                    esc(p.team) +
+                    "</span></span>";
 
-      var taskHTML = p.tasks.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+                var taskHTML = p.tasks
+                    .map(function (t) {
+                        return "<li>" + esc(t) + "</li>";
+                    })
+                    .join("");
 
-      var toolHTML = p.tools.map(function (t) { return '<span class="tool-badge">' + esc(t) + '</span>'; }).join('');
+                var toolHTML = p.tools
+                    .map(function (t) {
+                        return '<span class="tool-badge">' + esc(t) + "</span>";
+                    })
+                    .join("");
 
-      var assetsHTML;
-      if (p.hasAssets) {
-        assetsHTML =
-          '<div class="modal-section">' +
-          '<p class="modal-section-label">기획 산출물</p>' +
-          '<div class="modal-gallery">' +
+                var assetsHTML;
+                if (p.hasAssets) {
+                    assetsHTML =
+                        '<div class="modal-section">' +
+                        '<p class="modal-section-label">기획 산출물</p>' +
+                        '<div class="modal-gallery">' +
+                        '<div class="gallery-item">' +
+                        '<p class="gallery-item-label">요구사항 정의서</p>' +
+                        '<p class="gallery-item-desc">엑셀 기반으로 시스템별 요구사항을 체계적으로 분류하고, 요구사항 ID/분류/우선순위/기대효과를 명확히 정의한 산출물.</p>' +
+                        '<div class="gallery-img-wrap"><img src="assets/req-spec.png" alt="요구사항 정의서" loading="lazy" /></div>' +
+                        "</div>" +
+                        '<div class="gallery-item">' +
+                        '<p class="gallery-item-label">프로세스 정의서</p>' +
+                        '<p class="gallery-item-desc">DB, Admin, App 간의 전체 데이터 흐름을 플로우차트로 도식화. 시스템 간 인터페이스와 분기 조건을 명확히 정의.</p>' +
+                        '<div class="gallery-img-wrap"><img src="assets/process-flow.png" alt="프로세스 정의서" loading="lazy" /></div>' +
+                        "</div>" +
+                        '<div class="gallery-item">' +
+                        '<p class="gallery-item-label">화면 설계서</p>' +
+                        '<p class="gallery-item-desc">Figma 기반 고해상도 화면설계서. 버전 관리 체계(v1.5~v1.8)를 갖추고, 각 화면마다 UI 구조 및 인터랙션 상세를 기술.</p>' +
+                        '<div class="gallery-img-wrap"><img src="assets/screen-home-1.png" alt="화면 설계서 대표" loading="lazy" /></div>' +
+                        '<div class="gallery-sub-grid">' +
+                        '<img src="assets/screen-home.png"  alt="화면 설계서 서브 1" loading="lazy" />' +
+                        '<img src="assets/screen-home-2.png" alt="화면 설계서 서브 2" loading="lazy" />' +
+                        '<img src="assets/screen-home-3.png" alt="화면 설계서 서브 3" loading="lazy" />' +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>";
+                } else {
+                    assetsHTML =
+                        '<div class="modal-section">' +
+                        '<p class="modal-section-label">산출물</p>' +
+                        '<div class="modal-confidential">' +
+                        '<p class="lock-text">CONFIDENTIAL</p>' +
+                        "<p>보안 정책에 따라 본 프로젝트의 산출물은 공개하지 않습니다.<br>산출물 예시는 웨어닥터 프로젝트를 참고해 주십시오.</p>" +
+                        "</div>" +
+                        "</div>";
+                }
 
-          '<div class="gallery-item">' +
-          '<p class="gallery-item-label">요구사항 정의서</p>' +
-          '<p class="gallery-item-desc">엑셀 기반으로 시스템별 요구사항을 체계적으로 분류하고, 요구사항 ID/분류/우선순위/기대효과를 명확히 정의한 산출물.</p>' +
-          '<div class="gallery-img-wrap"><img src="assets/req-spec.png" alt="요구사항 정의서" loading="lazy" /></div>' +
-          '</div>' +
+                modalBody.innerHTML =
+                    '<div class="modal-section">' +
+                    '<p class="modal-section-label">프로젝트 배경</p>' +
+                    '<p class="modal-section-content">' +
+                    esc(p.background) +
+                    "</p>" +
+                    "</div>" +
+                    '<div class="modal-section">' +
+                    '<p class="modal-section-label">수행 업무</p>' +
+                    '<ul class="modal-task-list">' +
+                    taskHTML +
+                    "</ul>" +
+                    "</div>" +
+                    '<div class="modal-section">' +
+                    '<p class="modal-section-label">사용 도구</p>' +
+                    '<div class="modal-tool-badges">' +
+                    toolHTML +
+                    "</div>" +
+                    "</div>" +
+                    assetsHTML;
+            }
 
-          '<div class="gallery-item">' +
-          '<p class="gallery-item-label">프로세스 정의서</p>' +
-          '<p class="gallery-item-desc">DB, Admin, App 간의 전체 데이터 흐름을 플로우차트로 도식화. 시스템 간 인터페이스와 분기 조건을 명확히 정의.</p>' +
-          '<div class="gallery-img-wrap"><img src="assets/process-flow.png" alt="프로세스 정의서" loading="lazy" /></div>' +
-          '</div>' +
+            function openModal(id) {
+                var p = PROJECTS[id];
+                if (!p) return;
+                renderModal(p);
+                overlay.classList.add("open");
+                document.body.style.overflow = "hidden";
+                modalClose.focus();
+            }
 
-          '<div class="gallery-item">' +
-          '<p class="gallery-item-label">화면 설계서</p>' +
-          '<p class="gallery-item-desc">Figma 기반 고해상도 화면설계서. 버전 관리 체계(v1.5~v1.8)를 갖추고, 각 화면마다 UI 구조 및 인터랙션 상세를 기술.</p>' +
-          '<div class="gallery-img-wrap"><img src="assets/screen-home-1.png" alt="화면 설계서 대표" loading="lazy" /></div>' +
-          '<div class="gallery-sub-grid">' +
-          '<img src="assets/screen-home.png"  alt="화면 설계서 서브 1" loading="lazy" />' +
-          '<img src="assets/screen-home-2.png" alt="화면 설계서 서브 2" loading="lazy" />' +
-          '<img src="assets/screen-home-3.png" alt="화면 설계서 서브 3" loading="lazy" />' +
-          '</div>' +
-          '</div>' +
+            function closeModal() {
+                overlay.classList.remove("open");
+                document.body.style.overflow = "";
+            }
 
-          '</div>' +
-          '</div>';
-      } else {
-        assetsHTML =
-          '<div class="modal-section">' +
-          '<p class="modal-section-label">산출물</p>' +
-          '<div class="modal-confidential">' +
-          '<p class="lock-text">CONFIDENTIAL</p>' +
-          '<p>보안 정책에 따라 본 프로젝트의 산출물은 공개하지 않습니다.<br>산출물 예시는 웨어닥터 프로젝트를 참고해 주십시오.</p>' +
-          '</div>' +
-          '</div>';
-      }
+            rows.forEach(function (row) {
+                row.addEventListener("click", function () {
+                    openModal(parseInt(row.getAttribute("data-project"), 10));
+                });
+                row.addEventListener("keydown", function (e) {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openModal(
+                            parseInt(row.getAttribute("data-project"), 10),
+                        );
+                    }
+                });
+            });
 
-      modalBody.innerHTML =
-        '<div class="modal-section">' +
-        '<p class="modal-section-label">프로젝트 배경</p>' +
-        '<p class="modal-section-content">' + esc(p.background) + '</p>' +
-        '</div>' +
-        '<div class="modal-section">' +
-        '<p class="modal-section-label">수행 업무</p>' +
-        '<ul class="modal-task-list">' + taskHTML + '</ul>' +
-        '</div>' +
-        '<div class="modal-section">' +
-        '<p class="modal-section-label">사용 도구</p>' +
-        '<div class="modal-tool-badges">' + toolHTML + '</div>' +
-        '</div>' +
-        assetsHTML;
-    }
+            modalClose.addEventListener("click", closeModal);
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) closeModal();
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && overlay.classList.contains("open"))
+                    closeModal();
+            });
 
-    function openModal(id) {
-      var p = PROJECTS[id];
-      if (!p) return;
-      renderModal(p);
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      modalClose.focus();
-    }
-
-    function closeModal() {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    rows.forEach(function (row) {
-      row.addEventListener('click', function () {
-        openModal(parseInt(row.getAttribute('data-project'), 10));
-      });
-      row.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          openModal(parseInt(row.getAttribute('data-project'), 10));
-        }
-      });
-    });
-
-    modalClose.addEventListener('click', closeModal);
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
-    });
-
-    /* ─────────────────────────────────────
+            /* ─────────────────────────────────────
        Nav scroll shadow
     ───────────────────────────────────── */
-    var nav = document.querySelector('.nav');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    });
-  </script>
-</body>
-
+            var nav = document.querySelector(".nav");
+            window.addEventListener("scroll", function () {
+                nav.classList.toggle("scrolled", window.scrollY > 20);
+            });
+        </script>
+    </body>
 </html>
