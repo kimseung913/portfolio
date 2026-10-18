@@ -1551,10 +1551,10 @@
                     </h1>
                     <p class="hero-title">SI 기획 전문가 &nbsp;|&nbsp; 7년차</p>
                     <p class="hero-desc">
-                        체계적 요구사항 분석과 설계를 통해 프로젝트 리스크를
-                        선제적으로 관리하는 SI 기획 전문가.<br />
-                        공공·유통·통신 등 다양한 도메인에서 검증된 기획 역량을
-                        보유하고 있습니다.
+                        체계적 요구사항 분석과 AI 기반 기술 검증 방법론으로
+                        프로젝트 리스크를 선제적으로 제어하는 SI 기획 전문가.<br />
+                        공공·유통·통신·교육 등 산업별 특수성이 강한 도메인에서
+                        검증된 기획 역량을 보유하고 있습니다.
                     </p>
                 </div>
                 <div class="profile-card">
@@ -1853,7 +1853,7 @@
             <div class="container">
                 <div class="exp-layout">
                     <div class="exp-header reveal">
-                        <p class="section-eyebrow">Career</p>
+                        <p class="section-eyebrow">Experience</p>
                         <h2 class="section-title" style="font-size: 40px">
                             경력 타임라인
                         </h2>
@@ -1942,7 +1942,7 @@
         <section class="works" id="works" aria-label="프로젝트 갤러리">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-eyebrow">Projects</p>
+                    <p class="section-eyebrow">WORKS</p>
                     <h2 class="section-title">프로젝트 갤러리</h2>
                 </div>
 
@@ -2841,6 +2841,63 @@
                 if (e.key === "Escape" && overlay.classList.contains("open"))
                     closeModal();
             });
+
+            /* ─────────────────────────────────────
+       Experience bar - 자동 비율 계산
+       (회사별 실 근무 개월수 기반. 매년 수동 갱신 불필요)
+    ───────────────────────────────────── */
+            (function () {
+                var WEEKENDAY_START = new Date(2019, 3, 1); // 2019.04
+                var WEEKENDAY_END = new Date(2021, 8, 30); // 2021.09
+                var BTSOFT_START = new Date(2022, 0, 1); // 2022.01
+                var now = new Date();
+
+                function months(d1, d2) {
+                    return (
+                        (d2.getFullYear() - d1.getFullYear()) * 12 +
+                        (d2.getMonth() - d1.getMonth())
+                    );
+                }
+
+                function fmtKor(m) {
+                    var y = Math.floor(m / 12);
+                    var rest = m % 12;
+                    if (y === 0) return rest + "개월";
+                    if (rest === 0) return y + "년";
+                    return y + "년 " + rest + "개월";
+                }
+
+                var wMonths = months(WEEKENDAY_START, WEEKENDAY_END);
+                var bMonths = months(BTSOFT_START, now);
+                var total = wMonths + bMonths;
+                var wPct = Math.round((wMonths / total) * 100);
+                var bPct = 100 - wPct;
+
+                document.documentElement.style.setProperty(
+                    "--exp-w-pct",
+                    wPct + "%",
+                );
+                document.documentElement.style.setProperty(
+                    "--exp-b-pct",
+                    bPct + "%",
+                );
+
+                var labelLeft = document.querySelector(
+                    ".exp-bar-label-left",
+                );
+                var labelRight = document.querySelector(
+                    ".exp-bar-label-right",
+                );
+
+                if (labelLeft) {
+                    labelLeft.textContent =
+                        "위크앤데이 · " + fmtKor(wMonths);
+                }
+                if (labelRight) {
+                    labelRight.textContent =
+                        "비티소프트 · " + fmtKor(bMonths);
+                }
+            })();
 
             /* ─────────────────────────────────────
        Nav scroll shadow
