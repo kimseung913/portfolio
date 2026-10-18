@@ -805,6 +805,32 @@
             margin-bottom: 32px;
         }
 
+        .exp-tabs-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 0.01em;
+        }
+
+        .exp-tabs-hint-arrow {
+            display: inline-block;
+            animation: hintBounce 1.6s ease-in-out infinite;
+        }
+
+        @keyframes hintBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(3px);
+            }
+        }
+
         .exp-tabs {
             display: flex;
             gap: 0;
@@ -1799,6 +1825,10 @@
                         위크앤데이에서 SI 기획의 기초를 다지고,
                         비티소프트에서 공공·유통·통신 대형 프로젝트의 전담
                         기획자로 성장했습니다.
+                    </p>
+                    <p class="exp-tabs-hint">
+                        <span class="exp-tabs-hint-arrow" aria-hidden="true">↓</span>
+                        탭을 눌러 회사별 상세 경력을 확인해주세요.
                     </p>
                     <div class="exp-tabs" role="tablist" aria-label="회사별 경력">
                         <button
