@@ -394,7 +394,76 @@
                 color: var(--text-muted);
                 max-width: 520px;
                 line-height: 1.85;
-                margin-bottom: 48px;
+                margin-bottom: 40px;
+            }
+
+            .hero-stats {
+                display: flex;
+                gap: 56px;
+                padding: 28px 0;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                max-width: 520px;
+                margin-bottom: 40px;
+            }
+
+            .hero-stat-item {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .hero-stat-num {
+                font-family: "Space Grotesk", sans-serif;
+                font-size: 36px;
+                font-weight: 700;
+                color: var(--text-primary);
+                line-height: 1;
+                letter-spacing: -0.02em;
+            }
+
+            .hero-stat-num .accent {
+                color: var(--accent);
+            }
+
+            .hero-stat-label {
+                font-size: 11px;
+                font-weight: 600;
+                color: var(--text-muted);
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+            }
+
+            .hero-cta {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 14px 28px;
+                background: var(--accent);
+                color: #ffffff;
+                border-radius: 999px;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+                letter-spacing: 0.02em;
+                transition: transform 0.25s ease, box-shadow 0.25s ease,
+                    background 0.25s ease;
+                box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+            }
+
+            .hero-cta:hover {
+                background: #1d4ed8;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+            }
+
+            .hero-cta-arrow {
+                transition: transform 0.25s ease;
+                display: inline-block;
+            }
+
+            .hero-cta:hover .hero-cta-arrow {
+                transform: translateX(4px);
             }
 
             /* Profile card */
@@ -498,6 +567,15 @@
 
                 .profile-card {
                     order: -1;
+                }
+
+                .hero-stats {
+                    gap: 32px;
+                    padding: 24px 0;
+                }
+
+                .hero-stat-num {
+                    font-size: 30px;
                 }
             }
 
@@ -1556,6 +1634,28 @@
                         공공·유통·통신·교육 등 다양한 도메인에서 프로젝트를
                         수행해 왔습니다.
                     </p>
+                    <div class="hero-stats" aria-label="주요 지표">
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num"
+                                >7<span class="accent">+</span></span
+                            >
+                            <span class="hero-stat-label">Years</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num">13</span>
+                            <span class="hero-stat-label">Projects</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="hero-stat-num">5</span>
+                            <span class="hero-stat-label">Domains</span>
+                        </div>
+                    </div>
+                    <a class="hero-cta" href="#works">
+                        프로젝트 보기
+                        <span class="hero-cta-arrow" aria-hidden="true"
+                            >&rarr;</span
+                        >
+                    </a>
                 </div>
                 <div class="profile-card">
                     <div class="profile-photo-wrap">
