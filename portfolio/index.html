@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>김승규 | SI 기획 전문가 포트폴리오</title>
-    <meta name="description" content="7년차 SI 기획 전문가 김승규의 포트폴리오. 공공, 유통, 통신/금융 등 멀티 도메인 SI 프로젝트 설계 전문." />
+    <meta name="description" content="7년차 SI 기획 전문가 김승규의 포트폴리오. 공공, 유통, 통신/핀테크 등 멀티 도메인 SI 프로젝트 설계 전문." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
@@ -1043,6 +1043,330 @@
             line-height: 1.7;
         }
 
+        .works-subtitle {
+            font-family: "Space Grotesk", "Pretendard", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        /* 대표 프로젝트 */
+        .featured {
+            margin-bottom: 96px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .feat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feat-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin-top: 4px;
+        }
+
+        .feat-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .feat-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .feat-timeline {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .feat-step {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 52px 1fr 20px;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            font-family: "Pretendard", sans-serif;
+            text-align: left;
+            cursor: pointer;
+            transition:
+                border-color 0.2s,
+                background 0.2s;
+        }
+
+        .feat-step:hover,
+        .feat-step:focus-visible {
+            border-color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .feat-step-year {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .feat-step-body {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .feat-step-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .feat-step-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .feat-step-arrow {
+            color: var(--text-muted);
+            transition:
+                color 0.2s,
+                transform 0.2s;
+        }
+
+        .feat-step:hover .feat-step-arrow {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+
+        .feat-showcase {
+            padding: 0;
+            overflow: hidden;
+            cursor: pointer;
+            transition:
+                border-color 0.2s,
+                box-shadow 0.2s;
+        }
+
+        .feat-showcase:hover,
+        .feat-showcase:focus-visible {
+            border-color: var(--accent);
+            box-shadow: 0 8px 28px rgba(37, 99, 235, 0.08);
+        }
+
+        .feat-thumb {
+            aspect-ratio: 16 / 9;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .feat-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .feat-series {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .feat-card .feat-showcase-body {
+            flex: 1;
+        }
+
+        /* 국건영 커버 (이미지 대신 CSS로 구성) */
+        .feat-cover {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 36px 40px;
+            background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
+            color: #ffffff;
+        }
+
+        .feat-cover::before,
+        .feat-cover::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .feat-cover::before {
+            width: 70%;
+            aspect-ratio: 1;
+            right: -22%;
+            top: -45%;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .feat-cover::after {
+            width: 46%;
+            aspect-ratio: 1;
+            left: -14%;
+            bottom: -48%;
+            border: 1px solid rgba(250, 204, 21, 0.55);
+        }
+
+        .feat-cover-text {
+            position: relative;
+        }
+
+        .feat-cover-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .feat-cover-title {
+            font-size: clamp(26px, 3.2vw, 38px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-top: 10px;
+        }
+
+        .feat-cover-sub {
+            font-size: 15px;
+            opacity: 0.85;
+            margin-top: 6px;
+        }
+
+        .feat-cover-flow {
+            position: relative;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 26px;
+        }
+
+        .feat-cover-flow li {
+            position: relative;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+
+        .feat-cover-flow li:last-child {
+            background: #ffffff;
+            color: #065f46;
+        }
+
+        .feat-cover-flow li + li::before {
+            content: "→";
+            position: absolute;
+            left: -19px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .feat-showcase-body {
+            padding: 28px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feat-points {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .feat-points li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .feat-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        .feat-cta {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: auto;
+            padding-top: 4px;
+        }
+
+        .proj-tag.assets {
+            background: rgba(5, 150, 105, 0.12);
+            color: var(--green);
+        }
+
+        .tab-count {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 11px;
+            opacity: 0.6;
+            margin-left: 2px;
+        }
+
+        @media (max-width: 900px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feat-card {
+                padding: 24px;
+            }
+
+            .feat-showcase,
+            .feat-series {
+                padding: 0;
+            }
+
+            .feat-cover {
+                padding: 24px;
+            }
+
+            .feat-showcase-body {
+                padding: 24px;
+            }
+        }
+
         .filter-tabs {
             display: flex;
             gap: 8px;
@@ -1491,7 +1815,84 @@
             border: 1px solid var(--border);
             display: block;
             object-fit: cover;
+            object-position: left top;
             aspect-ratio: 4/3;
+            cursor: zoom-in;
+        }
+
+        .modal-subgroup {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 4px 0 10px;
+        }
+
+        .modal-subgroup ~ .modal-subgroup {
+            margin-top: 20px;
+        }
+
+        .modal-outcome {
+            background: rgba(5, 150, 105, 0.05);
+            border: 1px solid rgba(5, 150, 105, 0.15);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .modal-outcome .modal-task-list li::before {
+            background: var(--green);
+        }
+
+        .modal-link {
+            margin-top: 16px;
+            font-family: "Pretendard", sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-link:hover {
+            text-decoration: underline;
+        }
+
+        .modal-gallery img {
+            cursor: zoom-in;
+        }
+
+        /* 이미지 확대 보기 */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1100;
+            background: rgba(15, 23, 42, 0.85);
+            overflow: auto;
+            padding: 48px 24px;
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            display: block;
+            margin: 0 auto;
+            max-width: min(1600px, 100%);
+            height: auto;
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 22px;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -1632,7 +2033,7 @@
                 <p class="hero-desc">
                     체계적인 요구사항 분석과 설계 검증으로 프로젝트 리스크를<br />
                     선제적으로 관리하는 기획자입니다.<br />
-                    공공·유통·통신·교육 등 다양한 도메인에서 프로젝트를 수행하며,<br />
+                    공공·유통·통신·제조·교육·업무 시스템 등 6개 도메인에서 프로젝트를 수행하며,<br />
                     각 산업의 표준과 특성을 설계에 반영해 왔습니다.
                 </p>
                 <div class="hero-stats" aria-label="주요 지표">
@@ -1645,7 +2046,7 @@
                         <span class="hero-stat-label">Projects</span>
                     </div>
                     <div class="hero-stat-item">
-                        <span class="hero-stat-num">5</span>
+                        <span class="hero-stat-num">6</span>
                         <span class="hero-stat-label">Domains</span>
                     </div>
                 </div>
@@ -1716,7 +2117,7 @@
                     <h3 class="comp-title">멀티 도메인 경험</h3>
                     <p class="comp-desc">
                         질병관리청(공공/의료), 롯데홈쇼핑·신세계(유통/커머스),
-                        KT(통신/금융), 교보문고(교육/LMS) 등 산업별 특수성이
+                        KT(통신/핀테크), 교보문고(교육/LMS) 등 산업별 특수성이
                         강한 도메인에서 프로젝트를 수행. 각 도메인의 표준과
                         제약을 이해하고 설계에 반영합니다.
                     </p>
@@ -1878,7 +2279,7 @@
                         <ul class="exp-tasks">
                             <li>
                                 고철계량시스템, 현대모비스 R&amp;D SW 분석
-                                솔루션, 라이선스 사용량 트래킹 등 제조/자사
+                                솔루션, SW 라이선스 수요예측 관리 시스템(SLIM) 등 제조/업무
                                 도메인 프로젝트에 참여
                             </li>
                             <li>
@@ -1886,7 +2287,7 @@
                                 산출물 작성 담당
                             </li>
                             <li>
-                                소만사 영업관리시스템 리뉴얼을 통해 내부 업무
+                                소만사 영업관리시스템 기능 개선을 통해 내부 업무
                                 프로세스 정리 경험
                             </li>
                         </ul>
@@ -1943,10 +2344,96 @@
                 <h2 class="section-title">프로젝트 갤러리</h2>
             </div>
 
+            <!-- 대표 프로젝트 -->
+            <div class="featured reveal" aria-label="대표 프로젝트">
+                <p class="works-subtitle">대표 프로젝트</p>
+                <div class="featured-grid">
+                    <article class="feat-card feat-series">
+                        <div class="feat-thumb feat-cover" aria-hidden="true">
+                            <div class="feat-cover-text">
+                                <p class="feat-cover-eyebrow">질병관리청 · 2023 – 2025</p>
+                                <p class="feat-cover-title">국민건강영양조사</p>
+                                <p class="feat-cover-sub">지원시스템 3개년 연속 기획</p>
+                            </div>
+                            <ol class="feat-cover-flow">
+                                <li>설치형 대면조사</li>
+                                <li>웹·모바일 사전조사</li>
+                                <li>자기기입식 조사</li>
+                            </ol>
+                        </div>
+                        <div class="feat-showcase-body">
+                        <div class="proj-tags">
+                            <span class="proj-tag public">공공 / 의료</span>
+                            <span class="proj-tag consecutive">3년 연속 전담</span>
+                        </div>
+                        <h3 class="feat-title">국민건강영양조사 지원시스템</h3>
+                        <p class="feat-meta">질병관리청 · 2023 ~ 2025</p>
+                        <ol class="feat-timeline">
+                            <li>
+                                <button type="button" class="feat-step" data-project="5">
+                                    <span class="feat-step-year">2023</span>
+                                    <span class="feat-step-body">
+                                        <span class="feat-step-title">재설계 및 기능개선</span>
+                                    </span>
+                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="feat-step" data-project="4">
+                                    <span class="feat-step-year">2024</span>
+                                    <span class="feat-step-body">
+                                        <span class="feat-step-title">추적조사 시스템 신규 구축</span>
+                                    </span>
+                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="feat-step" data-project="1">
+                                    <span class="feat-step-year">2025</span>
+                                    <span class="feat-step-body">
+                                        <span class="feat-step-title">자기기입식 식품섭취조사 도입</span>
+                                    </span>
+                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                </button>
+                            </li>
+                        </ol>
+                        </div>
+                    </article>
+
+                    <article class="feat-card feat-showcase" data-project="3" tabindex="0" role="button"
+                        aria-label="웨어닥터 서비스 기획 상세 보기">
+                        <div class="feat-thumb">
+                            <img src="assets/wd-cover.jpg" alt="웨어닥터 서비스 메인 화면" loading="lazy" />
+                        </div>
+                        <div class="feat-showcase-body">
+                            <div class="proj-tags">
+                                <span class="proj-tag public">공공 / 의료</span>
+                                <span class="proj-tag inhouse">자사 서비스</span>
+                                <span class="proj-tag assets">산출물 공개</span>
+                            </div>
+                            <h3 class="feat-title">웨어닥터 서비스 기획</h3>
+                            <p class="feat-meta">비티소프트 · 삼성서울병원 협업 · 2023 / 2025</p>
+                            <p class="feat-desc">
+                                만성질환 관리를 위한 모바일 헬스케어 서비스.
+                                진료 영역 초기 기획부터 분산된 산출물의 통합과
+                                정책·화면 보완까지 수행했습니다.
+                            </p>
+                            <ul class="feat-points">
+                                <li>임상 단계 진행 및 앱 출시</li>
+                                <li>요구사항·프로세스·화면 설계서 공개</li>
+                            </ul>
+                            <span class="feat-cta">산출물 보기 &rarr;</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <p class="works-subtitle">전체 프로젝트</p>
+
             <div class="works-notice reveal" role="note">
-                주요 프로젝트 산출물은 보안 정책상 비공개입니다. 자사
-                서비스인 웨어닥터의 산출물을 기획 프로세스 예시로
-                제시합니다.
+                대부분의 프로젝트 산출물은 보안 정책 및 고객사 사정으로
+                공개하지 않습니다. 기획 산출물 예시는 자사 서비스인 웨어닥터
+                프로젝트에서 확인하실 수 있습니다.
             </div>
 
             <div class="filter-tabs reveal" role="tablist" aria-label="프로젝트 카테고리 필터">
@@ -1960,7 +2447,7 @@
                     유통 / 커머스
                 </button>
                 <button class="filter-tab" data-filter="telecom" role="tab" aria-selected="false">
-                    통신 / 금융
+                    통신 / 핀테크
                 </button>
                 <button class="filter-tab" data-filter="manufacturing" role="tab" aria-selected="false">
                     제조 / IoT
@@ -1968,217 +2455,13 @@
                 <button class="filter-tab" data-filter="enterprise" role="tab" aria-selected="false">
                     엔터프라이즈 / 업무 시스템
                 </button>
-                <button class="filter-tab" data-filter="inhouse" role="tab" aria-selected="false">
-                    자사 서비스
-                </button>
                 <button class="filter-tab" data-filter="education" role="tab" aria-selected="false">
                     교육 / LMS
                 </button>
             </div>
 
-            <div class="project-list" id="projectList">
-                <!-- 01 -->
-                <div class="project-row" data-category="education" data-project="13" tabindex="0" role="button">
-                    <span class="proj-num">2026</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            교보문고 리딩트리(LMS) 재구축
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag education">교육 / LMS</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">교보문고</span>
-                    <span class="proj-period">2026.01 ~ 현재</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 02 -->
-                <div class="project-row" data-category="public" data-project="1" tabindex="0" role="button">
-                    <span class="proj-num">2025</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            2025년 국민건강영양조사 지원시스템 기능 개선
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag public">공공 / 의료</span>
-                            <span class="proj-tag consecutive">3년 연속 전담</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">질병관리청</span>
-                    <span class="proj-period">2025.07 ~ 2025.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 03 -->
-                <div class="project-row" data-category="inhouse" data-project="2" tabindex="0" role="button">
-                    <span class="proj-num">2025</span>
-                    <div class="proj-main">
-                        <p class="proj-title">리플라이 2차 고도화</p>
-                        <div class="proj-tags">
-                            <span class="proj-tag inhouse">자사 서비스</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">비티소프트</span>
-                    <span class="proj-period">2025.05 ~ 2025.07</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 04 -->
-                <div class="project-row" data-category="inhouse" data-project="3" tabindex="0" role="button">
-                    <span class="proj-num">2025</span>
-                    <div class="proj-main">
-                        <p class="proj-title">웨어닥터 서비스 기획</p>
-                        <div class="proj-tags">
-                            <span class="proj-tag inhouse">자사 서비스</span>
-                            <span class="proj-tag public">공공 / 의료</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">비티소프트</span>
-                    <span class="proj-period">2025.03 ~ 2025.05</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 05 -->
-                <div class="project-row" data-category="public" data-project="4" tabindex="0" role="button">
-                    <span class="proj-num">2024</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            2024년 국민건강영양조사 지원시스템 기능 개선
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag public">공공 / 의료</span>
-                            <span class="proj-tag consecutive">3년 연속 전담</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">질병관리청</span>
-                    <span class="proj-period">2024.06 ~ 2024.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 06 -->
-                <div class="project-row" data-category="public" data-project="5" tabindex="0" role="button">
-                    <span class="proj-num">2023</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            2023년 국민건강영양조사 지원시스템 재설계
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag public">공공 / 의료</span>
-                            <span class="proj-tag consecutive">3년 연속 전담</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">질병관리청</span>
-                    <span class="proj-period">2023.07 ~ 2023.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 07 -->
-                <div class="project-row" data-category="telecom" data-project="6" tabindex="0" role="button">
-                    <span class="proj-num">2023</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            KTPASS 캐시파이(Cashify) 시스템
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag telecom">통신 / 금융</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">KT</span>
-                    <span class="proj-period">2023.04 ~ 2023.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 08 -->
-                <div class="project-row" data-category="retail" data-project="7" tabindex="0" role="button">
-                    <span class="proj-num">2022</span>
-                    <div class="proj-main">
-                        <p class="proj-title">롯데홈쇼핑 상품정보 고도화</p>
-                        <div class="proj-tags">
-                            <span class="proj-tag retail">유통 / 커머스</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">롯데홈쇼핑</span>
-                    <span class="proj-period">2022.07 ~ 2022.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 09 -->
-                <div class="project-row" data-category="retail" data-project="8" tabindex="0" role="button">
-                    <span class="proj-num">2022</span>
-                    <div class="proj-main">
-                        <p class="proj-title">신세계 이마트 eCvan 재구축</p>
-                        <div class="proj-tags">
-                            <span class="proj-tag retail">유통 / 커머스</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">신세계아이앤씨</span>
-                    <span class="proj-period">2022.02 ~ 2022.06</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 10 -->
-                <div class="project-row" data-category="enterprise" data-project="9" tabindex="0" role="button">
-                    <span class="proj-num">2020</span>
-                    <div class="proj-main">
-                        <p class="proj-title">영업관리시스템 리뉴얼</p>
-                        <div class="proj-tags">
-                            <span class="proj-tag enterprise">엔터프라이즈 / 업무 시스템</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">소만사</span>
-                    <span class="proj-period">2020.11 ~ 2021.02</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 11 -->
-                <div class="project-row" data-category="manufacturing" data-project="10" tabindex="0" role="button">
-                    <span class="proj-num">2020</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            현대모비스 R&amp;D SW 분석관리 솔루션
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag manufacturing">제조 / IoT</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">현대모비스</span>
-                    <span class="proj-period">2020.07 ~ 2020.10</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 12 -->
-                <div class="project-row" data-category="enterprise" data-project="11" tabindex="0" role="button">
-                    <span class="proj-num">2019</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            라이선스 사용량 실용화 시스템
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag enterprise">엔터프라이즈 / 업무 시스템</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">닥터소프트</span>
-                    <span class="proj-period">2019.09 ~ 2019.12</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-
-                <!-- 13 -->
-                <div class="project-row" data-category="manufacturing" data-project="12" tabindex="0" role="button">
-                    <span class="proj-num">2019</span>
-                    <div class="proj-main">
-                        <p class="proj-title">
-                            고철계량시스템 구축 (스마트 팩토리 ERP)
-                        </p>
-                        <div class="proj-tags">
-                            <span class="proj-tag manufacturing">제조 / IoT</span>
-                        </div>
-                    </div>
-                    <span class="proj-client">대한강업</span>
-                    <span class="proj-period">2019.05 ~ 2019.08</span>
-                    <span class="proj-arrow">&rarr;</span>
-                </div>
-            </div>
+            <!-- 목록은 PROJECTS 데이터로 렌더링 -->
+            <div class="project-list" id="projectList"></div>
         </div>
     </section>
 
@@ -2208,242 +2491,314 @@
         </div>
     </div>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="이미지 확대 보기" hidden>
+        <button type="button" class="lightbox-close" aria-label="확대 보기 닫기">&times;</button>
+        <img id="lightboxImg" alt="" />
+    </div>
+
     <script>
         /* ─────────────────────────────────────
    Project Data
 ───────────────────────────────────── */
+        var DOMAIN_LABELS = {
+            public: "공공 / 의료",
+            retail: "유통 / 커머스",
+            telecom: "통신 / 핀테크",
+            manufacturing: "제조 / IoT",
+            enterprise: "엔터프라이즈 / 업무 시스템",
+            education: "교육 / LMS",
+        };
+
         var PROJECTS = {
             1: {
-                title: "2025년 국민건강영양조사 지원시스템 기능 개선",
+                title: "2025년 국민건강영양조사 지원시스템 기능개선",
+                year: "2025",
                 period: "2025.07 ~ 2025.12",
                 client: "질병관리청",
-                team: "기획1, 디자인1, 개발9 (총 11명)",
+                team: "PM1, PMO2, 기획1, 개발4, 디자인·퍼블리싱(외부)",
                 domain: "public",
-                domainLabel: "공공 / 의료",
                 consecutive: true,
                 background:
-                    "국민건강영양조사 데이터 수집 및 관리 시스템의 연간 기능 개선 사업. 3년 연속 전담 기획자로서 시스템 운영 연속성 확보 및 프로세스 최적화를 수행.",
+                    "현장조사(검진·설문·영양)의 소요 시간 부담을 줄이고 참여율을 높이기 위해 대상자가 직접 입력하는 자기기입식 식품섭취조사 체계를 도입하고, 2024년 구축한 추적조사 시스템의 기능을 확장한 기능개선 사업. 2023년 재설계 당시 기획한 모바일 사전조사 체계를 현장 여건에 맞게 재정비하여 자기기입식 조사로 고도화하였으며, 제10기 2차년도 조사항목 반영 및 누리집·아동구강건강실태조사 사이트 개선을 병행.",
+                role: "단독 기획자로서 사업 전 영역(자기기입식 식품섭취조사, 추적조사, 제10기 기능개선, 누리집)의 업무 프로세스 분석·설계 및 화면 기획 수행",
                 tasks: [
-                    "공공 데이터 표준 가이드라인 기반 기능 고도화 총괄",
-                    "기존 시스템 운영 프로세스 분석 및 최적화",
-                    "요구사항 분석, 기능 정의서 작성, 화면 설계",
-                    "범정부 기술 표준 준수 검증",
+                    "착수보고서 작성",
+                    "자기기입식 식품섭취조사 기획: 英 Newcastle Univ. intake24 벤치마킹, 반응형(1024px/375px) 설계 전략 수립, 24시간 회상조사·끼니 정렬·결식 처리·조사 상태 등 세부 정책 정의",
+                    "2028년 본조사 전환을 고려한 요구사항 협의 및 확정",
+                    "추적조사 기능개발: 식품섭취빈도조사 결과지, 변경이력 통합관리, 2026년 1차 조사표 타입 관리, 원시자료 조회 필터 UI 설계",
+                    "제10기 2차년도 신규 조사항목 및 구강조사 파노라마 업무 기능개선",
+                    "누리집 메뉴·콘텐츠 재구성 및 아동구강건강실태조사 사이트 콘텐츠 전면 개편 (대상자 확대 반영)",
                 ],
-                tools: ["HWP", "Excel", "Figma"],
-                hasAssets: false,
+                outcomes: [
+                    "자기기입식 식품섭취조사 2026년 조사 현장 적용 및 운영 중",
+                ],
+                tools: ["Figma", "Excel", "HWP"],
             },
             2: {
-                title: "리플라이 2차 고도화",
+                title: "리플라이 카페24 인앱 고도화",
+                year: "2025",
                 period: "2025.05 ~ 2025.07",
                 client: "비티소프트",
-                team: "기획1, 디자인1, 개발3 (총 5명)",
-                domain: "inhouse",
-                domainLabel: "자사 서비스",
+                team: "기획3, 디자인1, 개발6 (총 10명)",
+                domain: "retail",
+                inhouse: true,
                 background:
-                    "비티소프트 자사 서비스 리플라이의 2차 고도화. 사용자 피드백을 반영한 기능 확장.",
+                    "AI 기반 고객경험(VoC) 데이터 수집·분석 솔루션 '리플라이'를 카페24 플랫폼 입점 쇼핑몰에서 사용할 수 있는 리뷰 솔루션 앱으로 확장한 서비스의 고도화 프로젝트. 상점 관리자 페이지의 리뷰 운영 기능(대시보드, 리뷰 필터링, 탑랭킹, 감정분석, 금지어 관리 등)과 최고 관리자 기능을 확장.",
+                role: "기획 3인 중 상점 관리자 리뷰 운영 영역(리뷰 필터링·리뷰 탑랭킹·리뷰 목록) 기획 담당",
                 tasks: [
-                    "자사 서비스 확장 전략 수립",
-                    "핵심 기능 상세 설계",
-                    "사용자 피드백 데이터 기반 UI/UX 개편 주도",
-                    "요구사항 정의, 화면 설계서 작성",
+                    "리뷰 상태 관리 정책 및 리뷰 집계 정책 정의",
+                    "신고 리뷰 필터링 화면 설계 (신고 접수·처리 상태별 케이스, 리뷰 작성자 ID 마스킹 규칙 정의)",
+                    "리뷰 탑랭킹 화면 설계 (최신 리뷰 수·포토 리뷰 등 TOP 10 기준별 케이스)",
+                    "리뷰 노출 상태 변경 사유 입력 및 변경 이력 관리 화면 설계",
+                    "쇼핑몰 회원 마이페이지 리뷰 내역(FO) 화면 설계",
                 ],
-                tools: ["Figma", "PPT"],
-                hasAssets: false,
+                outcomes: ["카페24 인앱 리뷰 솔루션 고도화 기능 오픈"],
+                tools: ["Figma"],
             },
             3: {
                 title: "웨어닥터 서비스 기획",
-                period: "2025.03 ~ 2025.05",
-                client: "비티소프트",
-                team: "기획2, 디자인1, 개발3 (총 6명)",
-                domain: "inhouse",
-                domainLabel: "자사 서비스",
-                extraDomain: { key: "public", label: "공공 / 의료" },
+                year: "2025",
+                period: "1차 2023.01 ~ 2023.04 / 2차 2025.02 ~ 2025.05",
+                listPeriod: "2023 · 2025",
+                client: "비티소프트 · 삼성서울병원 협업",
+                listClient: "비티소프트",
+                team: "1차 기획4, 개발8 / 2차 기획2, 개발1",
+                domain: "public",
+                inhouse: true,
                 background:
-                    "만성질환 관리가 필요한 환자들이 웨어러블 기기와 연동하여 건강 데이터(혈압, BMI, 활동량 등)를 추적하고, 의료기관의 운동 지침을 일상에서 실천할 수 있도록 돕는 모바일 헬스케어 서비스.",
-                tasks: [
-                    "신규 서비스 비즈니스 로직 및 전체 아키텍처 설계",
-                    "요구사항 정의서 작성 (엑셀 기반 체계적 분류)",
-                    "프로세스 정의서 작성 (DB/Admin/App 간 데이터 흐름 도식화)",
-                    "Figma 기반 화면설계서 작성 (버전 관리 v1.5~v1.8)",
-                    "데이터 연동 규격 설계",
+                    "고혈압 등 만성질환은 뚜렷한 증상이 없어 지속적인 관리가 어렵다는 문제에서 출발한 '만성질환 관리를 위한 내 손안의 주치의' 서비스. 웨어러블·가정용 의료기기와 연동해 혈압, BMI, 일일 활동량 등 개인건강기록(PHR)을 수집하고, 의료진이 실데이터를 기반으로 맞춤 운동 프로그램을 처방하는 모바일 헬스케어 서비스로, 삼성서울병원과 협업하여 임상 검증 및 의료진 요구사항을 반영. 2023년 4인 기획 체제로 초기 기획을 진행하였으나 산출물이 분산 관리되어 정책 및 화면 간 정합성 확보가 어려웠고, 2025년 산출물을 Figma 기반으로 통합하며 정책 및 화면을 보완.",
+                role: [
+                    "1차(2023): 4인 기획 체제에서 진료 영역 기획 담당",
+                    "2차(2025): 서비스 전 영역 기획 산출물 통합 및 정책·화면 보완 주도",
                 ],
-                tools: ["Figma", "PPT"],
+                taskGroups: [
+                    {
+                        label: "1차 · 초기 기획 (2023)",
+                        items: [
+                            "진료 영역 기획: 진료 예약 등록·수정·취소, 병원·의사 정보 검색, 의료데이터·문진표 작성 및 공유 동의, 진료 알림 및 이력 관리",
+                        ],
+                    },
+                    {
+                        label: "2차 · 산출물 통합 및 보완 (2025)",
+                        items: [
+                            "분산된 기존 산출물 분석 및 Figma 기반 화면설계서 통합 (버전 관리 v1.5~v1.8)",
+                            "요구사항 정의서 재정비 (공통·회원·진료·처방·운동·임상·상담 7개 영역, 3단계 분류 체계)",
+                            "정책 공백 및 화면 간 불일치 보완 (진료 예약 당일 변경·취소 페널티 등 운영 정책 검토)",
+                            "프로세스 정의서 작성 (DB·Admin·App 간 데이터 흐름, Samsung Health → Google Health Connect 연동 및 동기화 시점 정의)",
+                        ],
+                    },
+                ],
+                outcomes: ["삼성서울병원 협업 임상 단계 진행 및 앱 출시"],
+                tools: ["PPT", "Figma", "Excel"],
                 hasAssets: true,
             },
             4: {
-                title: "2024년 국민건강영양조사 지원시스템 기능 개선",
+                title: "2024년 국민건강영양조사 지원시스템 기능개선",
+                year: "2024",
                 period: "2024.06 ~ 2024.12",
                 client: "질병관리청",
                 team: "기획3, 디자인1, 개발10 (총 14명)",
                 domain: "public",
-                domainLabel: "공공 / 의료",
                 consecutive: true,
                 background:
-                    "국민건강영양조사 시스템의 연간 기능 개선. 범정부 기술 표준 준수 및 서비스 안정성 강화 목적.",
+                    "2019~2023년 현장조사시스템 웹 전환 재설계 완료 이후, 생애주기별 건강 변화 파악을 위한 패널·추적조사 체계 구축과 대국민 정보 제공 강화를 위해 추진한 기능개선 사업. 국민건강영양조사 누리집(국문/영문) 재설계, 추적조사 시스템 신규 구축, 제10기 1차년도 신규 조사항목 반영 등을 수행.",
+                role: "추적조사 시스템 신규 구축 기획 단독 전담 (누리집·신규 조사항목은 타 기획자 담당)",
                 tasks: [
-                    "범정부 기술 표준 준수 기능 설계",
-                    "대국민 서비스 안정성 강화 방안 설계",
-                    "요구사항 분석, 기능 정의, 화면 설계",
-                    "사용자 데이터 입력 프로세스 개선",
+                    "착수보고서 작성 참여",
+                    "추적조사 업무 인터뷰 계획 수립 및 요구사항 정의",
+                    "추적조사 정책 및 업무 프로세스 설계 (설계 방향 수립, 프로세스·안내사항 정의)",
+                    "추적조사 정보구조(IA) 및 화면 설계 (패널 관리, 현황 관리, 검독·변경이력, 사전정보, 통계, 원시자료, 전자조사표)",
+                    "기반(기저)조사 문항 타입 관리 방안 제안 및 변수 관리 기능개선 요건 정리",
+                    "추적조사 설문 초기 데이터 구성",
+                    "통합테스트 및 사용자 매뉴얼 작성, 회의록 작성",
                 ],
-                tools: ["HWP", "Excel", "Figma"],
-                hasAssets: false,
+                tools: ["PPT", "Excel", "HWP", "Figma"],
             },
             5: {
-                title: "2023년 국민건강영양조사 지원시스템 재설계",
+                title: "2023년 국민건강영양조사 지원시스템 재설계 및 기능개선",
+                year: "2023",
                 period: "2023.07 ~ 2023.12",
                 client: "질병관리청",
-                team: "기획1, 디자인1, 개발7 (총 9명)",
+                team: "PM1, 기획1, 개발6, 디자인·퍼블리싱",
                 domain: "public",
-                domainLabel: "공공 / 의료",
                 consecutive: true,
                 background:
-                    "노후화된 국민건강영양조사 시스템의 전면 재설계. 기존 시스템 한계를 극복하기 위한 구조 변경.",
+                    "현장 대면조사 중심의 설치형(CS) 영양조사 시스템을 웹·모바일 기반의 사전 자기기입 조사 체계로 전환하는 재설계 사업. 조사 대상자가 모바일로 사전 조사를 수행하고 조사원은 현장에서 확인·보정하는 방식으로 전환하여 현장 조사 시간 단축을 목표로 함. 질병관리청 클라우드 전환 방침에 따라 질병보건통합관리시스템 내 영양조사관리 메뉴를 신규 구성하고, 2024년 조사 지원을 위한 기능개선을 병행.",
+                role: "단독 기획자로서 업무 분석, 요구사항 정의, 화면 설계 및 품질보증 활동 수행",
                 tasks: [
-                    "시스템 전면 재설계 기획 총괄",
-                    "공공기관 표준 UI/UX 가이드 반영",
-                    "접근성(웹 접근성) 강화 설계",
-                    "정보구조(IA) 재설계, 화면 설계",
+                    "착수보고서 작성 참여",
+                    "영양조사 업무 프로세스 분석 및 요구사항 정의 (업무 인터뷰·요구사항 확정 회의)",
+                    "해외 식품섭취조사 시스템(美 NIH ASA24, 英 Newcastle Univ. intake24) UI/UX 벤치마킹",
+                    "영양조사 4종(식품섭취·식생활·식품섭취빈도·식품안정성조사) PC/Mobile 화면 설계",
+                    "식생활조사 내 식품섭취빈도조사 문항의 최상위 메뉴 분리 등 메뉴 구조 재설계",
+                    "조사원용 검독 화면 설계 (이상치·결측치 즉시 확인)",
+                    "청소년 건강설문 모바일 자기기입 화면 설계",
+                    "질병관리청 정보화TF UI/UX 가이드 준수 및 키보드 조작 등 웹 접근성 요건 반영",
+                    "2024년 조사 지원 기능개선(폐기능, 골밀도, 노인신체기능, 신체활동조사 등) 기획",
                 ],
-                tools: ["PPT", "HWP"],
-                hasAssets: false,
+                tools: ["PPT", "Excel", "HWP"],
             },
             6: {
                 title: "KTPASS 캐시파이(Cashify) 시스템",
+                year: "2023",
                 period: "2023.04 ~ 2023.12",
                 client: "KT",
                 team: "기획3, 개발8 (총 11명)",
                 domain: "telecom",
-                domainLabel: "통신 / 금융",
                 background:
-                    "KT의 모바일 결제/포인트 정산 시스템 구축. 복잡한 금융 settlement 로직이 핵심.",
+                    "KT PASS 앱 내 제휴 머천트·이벤트 링크를 제공하고, 해당 링크를 경유한 구매(CPS) 발생 시 결제 금액의 일정 수수료를 수익으로 확보하는 제휴 서비스 '캐시파이'의 신규 구축 프로젝트.",
+                role: "서브 기획자로서 앱 내 머천트·이벤트 노출 메뉴, BO 이벤트 노출 관리 및 통계 화면 기획 담당",
                 tasks: [
-                    "복잡한 금융 로직의 기술 타당성 검증 및 설계",
-                    "정산 프로세스 정의, 데이터 흐름 설계",
-                    "요구사항 분석, 기능 정의서 작성",
+                    "담당 영역 요구사항 정리 및 기능 정의",
+                    "KT PASS 앱 내 머천트·이벤트 정보 노출 메뉴 화면 설계",
+                    "BO 이벤트 노출 관리 화면 설계 및 이벤트 예약 일시·도래일 관련 정책·예외 케이스 정의",
+                    "서비스 운영 통계 화면 설계",
+                    "CPS 결제·수수료 정산 구조 이해를 바탕으로 한 화면 기획",
                 ],
                 tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
             },
             7: {
                 title: "롯데홈쇼핑 상품정보 고도화",
+                year: "2022",
                 period: "2022.07 ~ 2022.12",
                 client: "롯데홈쇼핑",
                 team: "기획3, 개발8 (총 11명)",
                 domain: "retail",
-                domainLabel: "유통 / 커머스",
                 background:
-                    "롯데홈쇼핑의 대규모 상품 데이터 관리 시스템 고도화. 트래픽 증가에 따른 데이터 처리 효율화.",
+                    "롯데홈쇼핑 기존 시스템 내 상품 관련 메뉴의 고도화 프로젝트. 상품 표준카테고리 관리 체계를 정비하고, 고객 접점(FO)의 상품 검색 및 노출 경험을 개선.",
+                role: "서브 기획자로서 상품 표준카테고리 속성 관리(BO) 및 FO 검색·노출 화면 기획 담당",
                 tasks: [
-                    "대규모 상품 데이터 처리 프로세스 최적화",
-                    "빅데이터 기반 상품 카테고리 매핑 로직 표준화 설계",
-                    "상품 정보 체계 재정의, 데이터 마이그레이션 설계",
+                    "상품 표준카테고리 속성 요건 정의 및 필요 화면 도출",
+                    "표준카테고리 속성을 효율적으로 관리할 수 있는 BO 화면 설계",
+                    "FO 상품 검색 UI 기획 및 검색 결과 노출 기준·예외 케이스 정의",
+                    "고객 화면 리뷰 및 협의를 통한 BO/FO 화면 설계 확정",
+                    "사용자·관리자 매뉴얼 작성",
+                    "통합테스트 시나리오 및 결과서 작성, QA 대응",
                 ],
                 tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
             },
             8: {
                 title: "신세계 이마트 eCvan 재구축",
+                year: "2022",
                 period: "2022.02 ~ 2022.06",
                 client: "신세계아이앤씨",
-                team: "기획3, 디자인1 (총 4명+)",
+                team: "기획3, 디자인1, 개발 10명 이상",
                 domain: "retail",
-                domainLabel: "유통 / 커머스",
                 background:
-                    "이마트의 B2B 공급망 관리 시스템(eCvan) 전면 재구축. 협력사 간 거래 효율 향상 목적.",
+                    "이마트와 협력사 간 거래를 지원하는 B2B 공급망 관리(SCM) 시스템 eCvan의 전면 재구축 프로젝트. 협력사의 발주·입고 업무 처리와 정보 공유를 지원하는 업무 화면을 새롭게 구축.",
+                role: "서브 기획자로서 발주·입고 메뉴 및 협력사 대상 프론트(FO) 화면 기획 담당",
                 tasks: [
-                    "B2B 공급망 관리 시스템의 데이터 아키텍처 재설계",
-                    "협력사 간 거래 효율 향상을 위한 인터페이스 고도화",
-                    "데이터 흐름 설계, 요구사항 정의, 화면 설계",
+                    "발주·입고 업무 요구사항 정리 및 화면 설계 (협력사 발주·수주 확인, 어드민 승인 화면)",
+                    "협력사 FO 메인 화면 및 공지사항·커뮤니티 화면 설계",
+                    "사용자 매뉴얼 작성",
+                    "회의록 작성",
                 ],
                 tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
             },
             9: {
-                title: "영업관리시스템 리뉴얼",
+                title: "영업관리시스템 기능 개선",
+                year: "2020",
                 period: "2020.11 ~ 2021.02",
                 client: "소만사",
-                team: "기획1",
+                team: "기획1, 개발3 (총 4명)",
                 domain: "enterprise",
-                domainLabel: "엔터프라이즈 / 업무 시스템",
                 background:
-                    "소만사 내부 영업관리시스템의 노후화에 따른 리뉴얼. 전사 시스템 통합에 맞춘 재정비.",
+                    "소만사 내부 영업관리시스템의 운영 효율 및 유지보수성 개선 프로젝트. 전사 시스템 통합 방향에 맞춰 영업 자산 관리 프로세스와 사용자 권한 체계를 재정비.",
+                role: "단독 기획자로서 개발자 3인과 협업하여 기획 전반 수행",
                 tasks: [
-                    "내부 영업 자산 관리 프로세스 표준화",
-                    "대시보드 설계",
+                    "고객 요구사항 분석 및 기능 정의",
+                    "영업 자산 관리 프로세스 표준화",
                     "전사 시스템 통합에 따른 사용자 권한 체계 재정립",
-                    "화면 설계, 기능 정의",
+                    "영업사원 업무 화면 및 공통코드 관리 화면 설계",
+                    "홈택스 연동 화면 설계",
                 ],
-                tools: ["PPT", "Figma"],
-                hasAssets: false,
+                tools: ["PPT", "Excel", "Word"],
             },
             10: {
                 title: "현대모비스 R&D SW 분석관리 솔루션",
+                year: "2020",
                 period: "2020.07 ~ 2020.10",
-                client: "현대모비스 (정부과제)",
-                team: "비공개",
+                client: "현대모비스",
+                team: "기획1, 디자인1",
                 domain: "manufacturing",
-                domainLabel: "제조 / IoT",
                 background:
-                    "현대모비스 연구소 내부에서 사용하는 SW 분석·관리 도구 구축 프로젝트. 사용량 추적 및 모니터링 대시보드 영역을 중심으로 기획 참여.",
+                    "SLIM(SW 라이선스 수요예측 관리 시스템) 수행 경험을 기반으로 참여한 현대모비스 연구소의 R&D SW 분석·관리 솔루션 구축 프로젝트. 연구소 내 SW 사용량 모니터링 및 형상·분석 관리 체계 수립을 목적으로 함.",
+                role: "단독 기획자로서 디자이너 1인과 협업하여 기획 전반 수행",
                 tasks: [
-                    "사용량/운영 데이터 모니터링 대시보드 화면 설계",
-                    "요구사항 정리 및 프론트 영역 화면 설계",
+                    "고객 요구사항 분석 및 기능 정의",
+                    "R&D SW 사용량 모니터링 대시보드 설계",
+                    "SW 형상·분석 관리 화면 설계",
                 ],
-                tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
+                tools: ["PPT", "Excel", "Word", "HWP"],
             },
             11: {
-                title: "라이선스 사용량 실용화 시스템",
+                title: "SLIM — SW 라이선스 수요예측 관리 시스템",
+                year: "2019",
                 period: "2019.09 ~ 2019.12",
-                client: "닥터소프트 (정부과제)",
-                team: "비공개",
+                client: "닥터소프트 주관 (정부과제)",
+                listClient: "닥터소프트",
+                team: "기획2, 디자인1",
                 domain: "enterprise",
-                domainLabel: "엔터프라이즈 / 업무 시스템",
                 background:
-                    "SW 라이선스 사용량을 모니터링해 자원 관리를 돕는 시스템 구축 프로젝트. 사용량 트래킹 대시보드 영역 기획 참여.",
+                    "닥터소프트 주관 정부과제로 수행한 사용자 직무 기반 클라우드 SW 라이선스 수요예측 관리 시스템 개발 프로젝트. R&D SW 사용량 통합 모니터링, 라이선스 수요예측, 클라우드 기반 운영을 동시에 지원하는 서비스의 부재에 따라 신규 시스템을 구축.",
+                role: "서브 기획자로서 메인 기획자와 협업하여 핵심 화면 기획 및 연구노트 작성 수행",
                 tasks: [
-                    "라이선스 사용량 모니터링 대시보드 화면 설계",
-                    "요구사항 정리 및 프론트 영역 화면 설계",
+                    "고객 요구사항 분석 및 기능 정의",
+                    "대시보드, 사용량 검색, 수요예측 화면 설계",
+                    "고객 요구를 반영한 레이아웃·폰트 크기 설계 및 전문 용어의 직관적 이해를 위한 아이콘 기반 UI 구성",
+                    "와이어프레임 및 스토리보드 작성",
+                    "정부과제 연구노트 작성",
                 ],
-                tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
+                tools: ["PPT", "Excel", "HWP"],
             },
             12: {
                 title: "고철계량시스템 구축 (스마트 팩토리 ERP)",
+                year: "2019",
                 period: "2019.05 ~ 2019.08",
                 client: "대한강업",
                 team: "기획2, 디자인1, 개발5 (총 8명)",
                 domain: "manufacturing",
-                domainLabel: "제조 / IoT",
                 background:
-                    "고철 생산 현장의 계량 데이터를 IoT로 수집하여 ERP 시스템과 연동하는 스마트 팩토리 프로젝트.",
+                    "인천 소재 철 스크랩 전문 기업 대한강업의 아날로그 계량 업무 디지털 전환 프로젝트. 수기 재고 관리, 계량 데이터 오류 및 거래 분쟁, 계량대 혼잡 등 기존 업무 프로세스의 비효율을 해소하기 위해 내부 업무용 웹 서비스 '고매트릭(GOMETRIC)'과 외부 거래처용 모바일 앱 '고스틸(GOSTEEL)'을 구축.",
+                role: "서브 기획자로서 메인 기획자와 협업하여 고매트릭·고스틸 양 서비스의 화면 기획 수행",
                 tasks: [
-                    "생산 현장 데이터(IoT) 수집 및 ERP 연동 인터페이스 설계",
-                    "요구사항 분석, 데이터 흐름 설계, 화면 설계",
+                    "고객 요구사항 분석 및 기능 정의",
+                    "고매트릭 정보구조(IA) 설계: 상황실, 실시간 계량 정보, 계량 데이터·스케줄·재무·세금계산서 관리, KPI 대시보드",
+                    "고스틸 정보구조(IA) 설계: 재고 현황, 고철 시세, 구매 공고·입찰·계약 관리, 거래처 간 메시징(스틸톡)",
+                    "와이어프레임 및 스토리보드 작성",
                 ],
-                tools: ["PPT", "Excel", "Word"],
-                hasAssets: false,
+                outcomeLabel: "개선 방향 (AS-IS → TO-BE)",
+                outcomes: [
+                    "KPI 통계 수기 집계 → 계량 데이터 기반 KPI 대시보드 제공",
+                    "재고 현황 파악 불가로 인한 불필요한 계량 발생 → 계량 데이터 축적 및 통계화를 통한 재고 관리 체계 마련",
+                    "계량 문서 반복 대조 후 세금계산서 발행 → 확정 계량 데이터의 회계 담당자 자동 연계",
+                ],
+                tools: ["Excel", "Oven"],
             },
             13: {
-                title: "교보문고 리딩트리(LMS) 재구축",
-                period: "2026.01 ~ 현재",
+                title: "교보문고 리딩트리 플랫폼 재구축 (2단계)",
+                year: "2026",
+                period: "2026.02 ~ 2026.10",
                 client: "교보문고",
                 team: "기획3, 디자인1, 개발10 (총 14명)",
                 domain: "education",
-                domainLabel: "교육 / LMS",
                 background:
-                    "교보문고 LMS 플랫폼 '리딩트리'의 전면 재구축 프로젝트. 학습자 참여 활성화를 위해 내부 커뮤니티 및 학습 메뉴 영역을 재설계하며, 설계 총괄 역할을 수행 중.",
+                    "교보문고 B2B 독서경영 플랫폼 '리딩트리'의 재구축 2단계 사업. 레거시 시스템 병행 운영에 따른 안정성·확장성 한계를 해소하고 북러닝 시장 경쟁 심화에 대응하기 위해, 1단계 재구축 기반 위에 학습 서비스 모듈화, 커뮤니티 고도화, 플랫폼 전환을 추진하여 '지식 경영 플랫폼'으로의 전환을 목표로 함.",
+                role: "학습 파트 기획 지연 해소를 위해 중도 투입되어 학습 서비스 기획 정상화 담당",
                 tasks: [
-                    "리딩트리 내부 커뮤니티 메뉴 재구축 설계",
-                    "학습 메뉴 재구축 설계 (학습 경험 개선)",
-                    "요구사항 분석, 기능 정의서 및 화면 설계서 작성",
-                    "기존 LMS 사용자 플로우 분석 및 개선안 도출",
+                    "학습 메뉴 정책 정리 및 정의",
+                    "학습 서비스 FO·BO 전체 프로세스 정의 및 예외 케이스 식별",
+                    "고객사 미결 요건 식별 및 확정",
+                    "개발자 협의를 통한 요건·구현 방안 조율",
+                    "통합테스트 시나리오 작성",
                 ],
-                tools: ["Figma", "PPT"],
-                hasAssets: false,
+                tools: ["Figma", "Excel"],
             },
         };
+
+        // 목록 노출 순서 (최근 수행 순)
+        var PROJECT_ORDER = [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
         /* ─────────────────────────────────────
    Mobile menu toggle
@@ -2509,15 +2864,79 @@
         });
 
         /* ─────────────────────────────────────
+   Project list (PROJECTS 데이터 기반 렌더링)
+───────────────────────────────────── */
+        var projectList = document.getElementById("projectList");
+
+        function esc(str) {
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        function tagHTML(cls, label) {
+            return (
+                '<span class="proj-tag ' + cls + '">' + esc(label) + "</span>"
+            );
+        }
+
+        function projectTags(p) {
+            var tags = tagHTML(p.domain, DOMAIN_LABELS[p.domain]);
+            if (p.inhouse) tags += " " + tagHTML("inhouse", "자사 서비스");
+            if (p.extraDomain)
+                tags += " " + tagHTML(p.extraDomain, DOMAIN_LABELS[p.extraDomain]);
+            if (p.consecutive)
+                tags += " " + tagHTML("consecutive", "3년 연속 전담");
+            if (p.hasAssets) tags += " " + tagHTML("assets", "산출물 공개");
+            return tags;
+        }
+
+        function projectCategories(p) {
+            return p.extraDomain ? [p.domain, p.extraDomain] : [p.domain];
+        }
+
+        projectList.innerHTML = PROJECT_ORDER.map(function (id) {
+            var p = PROJECTS[id];
+            return (
+                '<div class="project-row" data-category="' +
+                projectCategories(p).join(" ") +
+                '" data-project="' +
+                id +
+                '" tabindex="0" role="button">' +
+                '<span class="proj-num">' + esc(p.year) + "</span>" +
+                '<div class="proj-main">' +
+                '<p class="proj-title">' + esc(p.title) + "</p>" +
+                '<div class="proj-tags">' + projectTags(p) + "</div>" +
+                "</div>" +
+                '<span class="proj-client">' + esc(p.listClient || p.client) + "</span>" +
+                '<span class="proj-period">' + esc(p.listPeriod || p.period) + "</span>" +
+                '<span class="proj-arrow">&rarr;</span>' +
+                "</div>"
+            );
+        }).join("");
+
+        /* ─────────────────────────────────────
    Filter
 ───────────────────────────────────── */
         var tabs = document.querySelectorAll(".filter-tab");
         var rows = document.querySelectorAll(".project-row");
 
         tabs.forEach(function (tab) {
-            tab.addEventListener("click", function () {
-                var filter = tab.getAttribute("data-filter");
+            var filter = tab.getAttribute("data-filter");
+            var count = PROJECT_ORDER.filter(function (id) {
+                return (
+                    filter === "all" ||
+                    projectCategories(PROJECTS[id]).indexOf(filter) !== -1
+                );
+            }).length;
+            tab.insertAdjacentHTML(
+                "beforeend",
+                ' <span class="tab-count">' + count + "</span>",
+            );
 
+            tab.addEventListener("click", function () {
                 tabs.forEach(function (t) {
                     t.classList.remove("active");
                     t.setAttribute("aria-selected", "false");
@@ -2526,8 +2945,8 @@
                 tab.setAttribute("aria-selected", "true");
 
                 rows.forEach(function (row) {
-                    var cat = row.getAttribute("data-category");
-                    var show = filter === "all" || cat === filter;
+                    var cats = row.getAttribute("data-category").split(" ");
+                    var show = filter === "all" || cats.indexOf(filter) !== -1;
                     row.classList.toggle("hidden", !show);
                 });
             });
@@ -2537,125 +2956,171 @@
    Modal
 ───────────────────────────────────── */
         var overlay = document.getElementById("modalOverlay");
+        var modal = document.getElementById("modal");
         var modalClose = document.getElementById("modalClose");
         var modalTags = document.getElementById("modalTags");
         var modalTitle = document.getElementById("modalTitle");
         var modalMeta = document.getElementById("modalMeta");
         var modalBody = document.getElementById("modalBody");
 
-        function tagHTML(cls, label) {
+        function listHTML(items) {
             return (
-                '<span class="proj-tag ' + cls + '">' + label + "</span>"
+                '<ul class="modal-task-list">' +
+                items
+                    .map(function (t) {
+                        return "<li>" + esc(t) + "</li>";
+                    })
+                    .join("") +
+                "</ul>"
             );
         }
 
-        function esc(str) {
-            return String(str)
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;");
+        function sectionHTML(label, inner) {
+            return (
+                '<div class="modal-section">' +
+                '<p class="modal-section-label">' + esc(label) + "</p>" +
+                inner +
+                "</div>"
+            );
         }
 
-        function renderModal(p) {
-            var tags = tagHTML(p.domain, p.domainLabel);
-            if (p.extraDomain)
-                tags +=
-                    " " + tagHTML(p.extraDomain.key, p.extraDomain.label);
-            if (p.consecutive)
-                tags +=
-                    ' <span class="proj-tag consecutive">3년 연속 전담</span>';
-            modalTags.innerHTML = tags;
+        function galleryItemHTML(label, desc, src) {
+            return (
+                '<div class="gallery-item">' +
+                '<p class="gallery-item-label">' + label + "</p>" +
+                '<p class="gallery-item-desc">' + desc + "</p>" +
+                '<div class="gallery-img-wrap"><img src="' + src + '" alt="' + label + '" loading="lazy" /></div>' +
+                "</div>"
+            );
+        }
 
+        function subGridHTML(imgs) {
+            return (
+                '<div class="gallery-sub-grid">' +
+                imgs
+                    .map(function (m) {
+                        return '<img src="' + m[0] + '" alt="' + m[1] + '" loading="lazy" />';
+                    })
+                    .join("") +
+                "</div>"
+            );
+        }
+
+        var ASSETS_HTML =
+            '<div class="modal-gallery">' +
+            galleryItemHTML(
+                "주요 화면 흐름",
+                "로그인부터 건강지표 확인, 운동지침 확인, 운동 수행, 운동 피드백까지 임상 환자의 핵심 사용 흐름을 구성하는 앱 화면.",
+                "assets/wd-screens.png",
+            ) +
+            galleryItemHTML(
+                "요구사항 정의서",
+                "2025년 재정비본. 공통·회원·진료·처방·운동·임상·상담 7개 영역을 3단계(Lv.1~3)로 분류하고, 요구사항별 상세 내용과 운영 정책 검토 의견(기획검토)을 함께 관리.",
+                "assets/req-spec.png",
+            ) +
+            '<div class="gallery-item">' +
+            '<p class="gallery-item-label">프로세스 정의서</p>' +
+            '<p class="gallery-item-desc">DB·Admin·App 간 전체 데이터 흐름과 분기 조건을 도식화. Samsung Health → Google Health Connect 연동 경로와 데이터 동기화 시점을 정의하고, 운동 수행 등 단위 프로세스별로 상태값(미진행·미완료·완료)과 분기를 상세화.</p>' +
+            '<div class="gallery-img-wrap"><img src="assets/process-flow.png" alt="전체 프로세스" loading="lazy" /></div>' +
+            subGridHTML([["assets/wd-process-exercise.png", "운동 수행 프로세스"]]) +
+            "</div>" +
+            '<div class="gallery-item">' +
+            '<p class="gallery-item-label">화면 설계서</p>' +
+            '<p class="gallery-item-desc">2023년 4인 기획 체제에서 분산 작성된 산출물을 Figma 기반으로 통합. 화면별 UI 구조와 노출 정책·계산식·상태값을 기술하고, 버전 관리 체계(v1.5~v1.8)로 변경 이력을 화면 단위로 추적.</p>' +
+            '<div class="gallery-img-wrap"><img src="assets/screen-home.png" alt="화면 설계서 - 홈" loading="lazy" /></div>' +
+            subGridHTML([
+                ["assets/wd-spec-guide.png", "화면 설계서 - 운동지침 상세"],
+                ["assets/wd-spec-workout.png", "화면 설계서 - 오늘의 운동"],
+                ["assets/screen-home-3.png", "화면 설계서 - 최신 앱 버전 사용 유도 팝업"],
+            ]) +
+            "</div>" +
+            "</div>";
+
+        var ASSETS_PROJECT_ID = 3;
+
+        function renderModal(p) {
+            modalTags.innerHTML = projectTags(p);
             modalTitle.textContent = p.title;
 
-            modalMeta.innerHTML =
-                '<span class="modal-meta-item"><span class="key">기간</span><span class="val">' +
-                esc(p.period) +
-                "</span></span>" +
-                '<span class="modal-meta-item"><span class="key">발주처</span><span class="val">' +
-                esc(p.client) +
-                "</span></span>" +
-                '<span class="modal-meta-item"><span class="key">팀 구성</span><span class="val">' +
-                esc(p.team) +
-                "</span></span>";
-
-            var taskHTML = p.tasks
-                .map(function (t) {
-                    return "<li>" + esc(t) + "</li>";
+            modalMeta.innerHTML = [
+                ["기간", p.period],
+                ["발주처", p.client],
+                ["팀 구성", p.team],
+            ]
+                .map(function (m) {
+                    return (
+                        '<span class="modal-meta-item"><span class="key">' +
+                        m[0] +
+                        '</span><span class="val">' +
+                        esc(m[1]) +
+                        "</span></span>"
+                    );
                 })
                 .join("");
 
-            var toolHTML = p.tools
-                .map(function (t) {
-                    return '<span class="tool-badge">' + esc(t) + "</span>";
-                })
-                .join("");
+            var roleHTML = Array.isArray(p.role)
+                ? listHTML(p.role)
+                : '<p class="modal-section-content">' + esc(p.role) + "</p>";
 
-            var assetsHTML;
+            var taskHTML = p.taskGroups
+                ? p.taskGroups
+                      .map(function (g) {
+                          return (
+                              '<p class="modal-subgroup">' + esc(g.label) + "</p>" +
+                              listHTML(g.items)
+                          );
+                      })
+                      .join("")
+                : listHTML(p.tasks);
+
+            var toolHTML =
+                '<div class="modal-tool-badges">' +
+                p.tools
+                    .map(function (t) {
+                        return '<span class="tool-badge">' + esc(t) + "</span>";
+                    })
+                    .join("") +
+                "</div>";
+
+            var html =
+                sectionHTML(
+                    "프로젝트 배경",
+                    '<p class="modal-section-content">' + esc(p.background) + "</p>",
+                ) +
+                sectionHTML("담당 역할", roleHTML) +
+                sectionHTML("수행 업무", taskHTML);
+
+            if (p.outcomes)
+                html += sectionHTML(
+                    p.outcomeLabel || "주요 성과",
+                    '<div class="modal-outcome">' + listHTML(p.outcomes) + "</div>",
+                );
+
+            html += sectionHTML("사용 도구", toolHTML);
+
             if (p.hasAssets) {
-                assetsHTML =
-                    '<div class="modal-section">' +
-                    '<p class="modal-section-label">기획 산출물</p>' +
-                    '<div class="modal-gallery">' +
-                    '<div class="gallery-item">' +
-                    '<p class="gallery-item-label">요구사항 정의서</p>' +
-                    '<p class="gallery-item-desc">엑셀 기반으로 시스템별 요구사항을 체계적으로 분류하고, 요구사항 ID/분류/우선순위/기대효과를 명확히 정의한 산출물.</p>' +
-                    '<div class="gallery-img-wrap"><img src="assets/req-spec.png" alt="요구사항 정의서" loading="lazy" /></div>' +
-                    "</div>" +
-                    '<div class="gallery-item">' +
-                    '<p class="gallery-item-label">프로세스 정의서</p>' +
-                    '<p class="gallery-item-desc">DB, Admin, App 간의 전체 데이터 흐름을 플로우차트로 도식화. 시스템 간 인터페이스와 분기 조건을 명확히 정의.</p>' +
-                    '<div class="gallery-img-wrap"><img src="assets/process-flow.png" alt="프로세스 정의서" loading="lazy" /></div>' +
-                    "</div>" +
-                    '<div class="gallery-item">' +
-                    '<p class="gallery-item-label">화면 설계서</p>' +
-                    '<p class="gallery-item-desc">Figma 기반 고해상도 화면설계서. 버전 관리 체계(v1.5~v1.8)를 갖추고, 각 화면마다 UI 구조 및 인터랙션 상세를 기술.</p>' +
-                    '<div class="gallery-img-wrap"><img src="assets/screen-home-1.png" alt="화면 설계서 대표" loading="lazy" /></div>' +
-                    '<div class="gallery-sub-grid">' +
-                    '<img src="assets/screen-home.png"  alt="화면 설계서 서브 1" loading="lazy" />' +
-                    '<img src="assets/screen-home-2.png" alt="화면 설계서 서브 2" loading="lazy" />' +
-                    '<img src="assets/screen-home-3.png" alt="화면 설계서 서브 3" loading="lazy" />' +
-                    "</div>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>";
+                html += sectionHTML("기획 산출물", ASSETS_HTML);
             } else {
-                assetsHTML =
-                    '<div class="modal-section">' +
-                    '<p class="modal-section-label">산출물</p>' +
+                html += sectionHTML(
+                    "산출물",
                     '<div class="modal-confidential">' +
-                    '<p class="lock-text">CONFIDENTIAL</p>' +
-                    "<p>보안 정책에 따라 본 프로젝트의 산출물은 공개하지 않습니다.<br>산출물 예시는 웨어닥터 프로젝트를 참고해 주십시오.</p>" +
-                    "</div>" +
-                    "</div>";
+                        '<p class="lock-text">CONFIDENTIAL</p>' +
+                        "<p>본 프로젝트의 산출물은 공개하지 않습니다.</p>" +
+                        '<button type="button" class="modal-link" data-open="' +
+                        ASSETS_PROJECT_ID +
+                        '">공개 산출물 예시 보기 (웨어닥터) &rarr;</button>' +
+                        "</div>",
+                );
             }
 
-            modalBody.innerHTML =
-                '<div class="modal-section">' +
-                '<p class="modal-section-label">프로젝트 배경</p>' +
-                '<p class="modal-section-content">' +
-                esc(p.background) +
-                "</p>" +
-                "</div>" +
-                '<div class="modal-section">' +
-                '<p class="modal-section-label">수행 업무</p>' +
-                '<ul class="modal-task-list">' +
-                taskHTML +
-                "</ul>" +
-                "</div>" +
-                '<div class="modal-section">' +
-                '<p class="modal-section-label">사용 도구</p>' +
-                '<div class="modal-tool-badges">' +
-                toolHTML +
-                "</div>" +
-                "</div>" +
-                assetsHTML;
+            modalBody.innerHTML = html;
         }
 
         function openModal(id) {
             var p = PROJECTS[id];
             if (!p) return;
             renderModal(p);
+            modal.scrollTop = 0;
             overlay.classList.add("open");
             document.body.style.overflow = "hidden";
             modalClose.focus();
@@ -2666,18 +3131,46 @@
             document.body.style.overflow = "";
         }
 
-        rows.forEach(function (row) {
-            row.addEventListener("click", function () {
-                openModal(parseInt(row.getAttribute("data-project"), 10));
+        document.querySelectorAll("[data-project]").forEach(function (el) {
+            el.addEventListener("click", function () {
+                openModal(parseInt(el.getAttribute("data-project"), 10));
             });
-            row.addEventListener("keydown", function (e) {
+            el.addEventListener("keydown", function (e) {
+                if (el.tagName === "BUTTON") return;
                 if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    openModal(
-                        parseInt(row.getAttribute("data-project"), 10),
-                    );
+                    openModal(parseInt(el.getAttribute("data-project"), 10));
                 }
             });
+        });
+
+        /* ─────────────────────────────────────
+   Lightbox (산출물 이미지 확대 보기)
+───────────────────────────────────── */
+        var lightbox = document.getElementById("lightbox");
+        var lightboxImg = document.getElementById("lightboxImg");
+
+        function openLightbox(img) {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.hidden = false;
+            lightbox.scrollTop = 0;
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            lightboxImg.removeAttribute("src");
+        }
+
+        lightbox.addEventListener("click", closeLightbox);
+
+        modalBody.addEventListener("click", function (e) {
+            var link = e.target.closest("[data-open]");
+            if (link) {
+                openModal(parseInt(link.getAttribute("data-open"), 10));
+                return;
+            }
+            if (e.target.closest(".modal-gallery img")) openLightbox(e.target);
         });
 
         modalClose.addEventListener("click", closeModal);
@@ -2685,8 +3178,9 @@
             if (e.target === overlay) closeModal();
         });
         document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && overlay.classList.contains("open"))
-                closeModal();
+            if (e.key !== "Escape") return;
+            if (!lightbox.hidden) closeLightbox();
+            else if (overlay.classList.contains("open")) closeModal();
         });
 
         /* ─────────────────────────────────────
