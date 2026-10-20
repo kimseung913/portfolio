@@ -45,6 +45,7 @@
 
         html {
             scroll-behavior: smooth;
+            scrollbar-gutter: stable;
         }
 
         body {
@@ -822,10 +823,12 @@
         }
 
         @keyframes hintBounce {
+
             0%,
             100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(3px);
             }
@@ -917,6 +920,7 @@
                 opacity: 0;
                 transform: translateY(4px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1283,7 +1287,7 @@
             color: #065f46;
         }
 
-        .feat-cover-flow li + li::before {
+        .feat-cover-flow li+li::before {
             content: "→";
             position: absolute;
             left: -19px;
@@ -1591,7 +1595,10 @@
             width: 100%;
             max-width: 760px;
             max-height: 90vh;
-            overflow-y: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             transform: translateY(30px) scale(0.97);
             transition: transform 0.35s ease;
             box-shadow: 0 40px 100px rgba(0, 0, 0, 0.12);
@@ -1599,6 +1606,25 @@
 
         .modal-overlay.open .modal {
             transform: translateY(0) scale(1);
+        }
+
+        /* 스크롤은 안쪽 영역에서만 → 스크롤바가 둥근 모서리 안에서 잘림 */
+        .modal-scroll {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+        }
+
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-track {
+            background: transparent;
+            margin-block: 20px;
         }
 
         .modal-header {
@@ -1613,7 +1639,8 @@
             position: absolute;
             top: 20px;
             right: 24px;
-            background: rgba(0, 0, 0, 0.04);
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.85);
             border: 1px solid var(--border);
             border-radius: 50%;
             width: 40px;
@@ -1827,7 +1854,7 @@
             margin: 4px 0 10px;
         }
 
-        .modal-subgroup ~ .modal-subgroup {
+        .modal-subgroup~.modal-subgroup {
             margin-top: 20px;
         }
 
@@ -1868,6 +1895,7 @@
             z-index: 1100;
             background: rgba(15, 23, 42, 0.85);
             overflow: auto;
+            overscroll-behavior: contain;
             padding: 48px 24px;
             cursor: zoom-out;
         }
@@ -2033,7 +2061,7 @@
                 <p class="hero-desc">
                     체계적인 요구사항 분석과 설계 검증으로 프로젝트 리스크를<br />
                     선제적으로 관리하는 기획자입니다.<br />
-                    공공·유통·통신·제조·교육·업무 시스템 등 6개 도메인에서 프로젝트를 수행하며,<br />
+                    공공·유통·통신·제조·교육·업무 시스템 등 6개 도메인에서 프로젝트를 수행하며,
                     각 산업의 표준과 특성을 설계에 반영해 왔습니다.
                 </p>
                 <div class="hero-stats" aria-label="주요 지표">
@@ -2057,7 +2085,7 @@
             </div>
             <div class="profile-card">
                 <div class="profile-photo-wrap">
-                    <img src="assets/profile.png" alt="김승규 프로필 사진" class="profile-photo" />
+                    <img src="assets/profile.jpg" alt="김승규 프로필 사진" class="profile-photo" />
                 </div>
                 <div class="profile-info">
                     <div class="profile-row">
@@ -2237,25 +2265,13 @@
                         탭을 눌러 회사별 상세 경력을 확인해주세요.
                     </p>
                     <div class="exp-tabs" role="tablist" aria-label="회사별 경력">
-                        <button
-                            type="button"
-                            class="exp-tab"
-                            data-tab="weekenday"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="exp-panel-weekenday"
-                        >
+                        <button type="button" class="exp-tab" data-tab="weekenday" role="tab" aria-selected="false"
+                            aria-controls="exp-panel-weekenday">
                             <span class="exp-tab-label">위크앤데이 · 2년 5개월</span>
                             <span class="exp-tab-bar"></span>
                         </button>
-                        <button
-                            type="button"
-                            class="exp-tab active"
-                            data-tab="btsoft"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="exp-panel-btsoft"
-                        >
+                        <button type="button" class="exp-tab active" data-tab="btsoft" role="tab" aria-selected="true"
+                            aria-controls="exp-panel-btsoft">
                             <span class="exp-tab-label">비티소프트 · 4년 9개월</span>
                             <span class="exp-tab-bar"></span>
                         </button>
@@ -2263,13 +2279,8 @@
                 </div>
 
                 <div class="exp-panels">
-                    <article
-                        class="exp-panel exp-card reveal"
-                        id="exp-panel-weekenday"
-                        data-panel="weekenday"
-                        role="tabpanel"
-                        hidden
-                    >
+                    <article class="exp-panel exp-card reveal" id="exp-panel-weekenday" data-panel="weekenday"
+                        role="tabpanel" hidden>
                         <div class="exp-card-head">
                             <h3 class="exp-company">위크앤데이</h3>
                             <span class="exp-rank">사원</span>
@@ -2293,12 +2304,8 @@
                         </ul>
                     </article>
 
-                    <article
-                        class="exp-panel exp-card reveal active"
-                        id="exp-panel-btsoft"
-                        data-panel="btsoft"
-                        role="tabpanel"
-                    >
+                    <article class="exp-panel exp-card reveal active" id="exp-panel-btsoft" data-panel="btsoft"
+                        role="tabpanel">
                         <div class="exp-card-head">
                             <h3 class="exp-company">비티소프트</h3>
                             <span class="exp-rank">책임</span>
@@ -2362,41 +2369,41 @@
                             </ol>
                         </div>
                         <div class="feat-showcase-body">
-                        <div class="proj-tags">
-                            <span class="proj-tag public">공공 / 의료</span>
-                            <span class="proj-tag consecutive">3년 연속 전담</span>
-                        </div>
-                        <h3 class="feat-title">국민건강영양조사 지원시스템</h3>
-                        <p class="feat-meta">질병관리청 · 2023 ~ 2025</p>
-                        <ol class="feat-timeline">
-                            <li>
-                                <button type="button" class="feat-step" data-project="5">
-                                    <span class="feat-step-year">2023</span>
-                                    <span class="feat-step-body">
-                                        <span class="feat-step-title">재설계 및 기능개선</span>
-                                    </span>
-                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="feat-step" data-project="4">
-                                    <span class="feat-step-year">2024</span>
-                                    <span class="feat-step-body">
-                                        <span class="feat-step-title">추적조사 시스템 신규 구축</span>
-                                    </span>
-                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="feat-step" data-project="1">
-                                    <span class="feat-step-year">2025</span>
-                                    <span class="feat-step-body">
-                                        <span class="feat-step-title">자기기입식 식품섭취조사 도입</span>
-                                    </span>
-                                    <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
-                                </button>
-                            </li>
-                        </ol>
+                            <div class="proj-tags">
+                                <span class="proj-tag public">공공 / 의료</span>
+                                <span class="proj-tag consecutive">3년 연속 전담</span>
+                            </div>
+                            <h3 class="feat-title">국민건강영양조사 지원시스템</h3>
+                            <p class="feat-meta">질병관리청 · 2023 ~ 2025</p>
+                            <ol class="feat-timeline">
+                                <li>
+                                    <button type="button" class="feat-step" data-project="5">
+                                        <span class="feat-step-year">2023</span>
+                                        <span class="feat-step-body">
+                                            <span class="feat-step-title">재설계 및 기능개선</span>
+                                        </span>
+                                        <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="feat-step" data-project="4">
+                                        <span class="feat-step-year">2024</span>
+                                        <span class="feat-step-body">
+                                            <span class="feat-step-title">추적조사 시스템 신규 구축</span>
+                                        </span>
+                                        <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="feat-step" data-project="1">
+                                        <span class="feat-step-year">2025</span>
+                                        <span class="feat-step-body">
+                                            <span class="feat-step-title">자기기입식 식품섭취조사 도입</span>
+                                        </span>
+                                        <span class="feat-step-arrow" aria-hidden="true">&rarr;</span>
+                                    </button>
+                                </li>
+                            </ol>
                         </div>
                     </article>
 
@@ -2479,15 +2486,17 @@
     <!-- Modal -->
     <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal" id="modal">
-            <div class="modal-header">
-                <button class="modal-close" id="modalClose" aria-label="모달 닫기">
-                    &times;
-                </button>
-                <div class="modal-tags" id="modalTags"></div>
-                <h2 class="modal-title" id="modalTitle"></h2>
-                <div class="modal-meta-row" id="modalMeta"></div>
+            <button class="modal-close" id="modalClose" aria-label="모달 닫기">
+                &times;
+            </button>
+            <div class="modal-scroll" id="modalScroll">
+                <div class="modal-header">
+                    <div class="modal-tags" id="modalTags"></div>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-meta-row" id="modalMeta"></div>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
             </div>
-            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
@@ -2957,6 +2966,7 @@
 ───────────────────────────────────── */
         var overlay = document.getElementById("modalOverlay");
         var modal = document.getElementById("modal");
+        var modalScroll = document.getElementById("modalScroll");
         var modalClose = document.getElementById("modalClose");
         var modalTags = document.getElementById("modalTags");
         var modalTitle = document.getElementById("modalTitle");
@@ -3064,13 +3074,13 @@
 
             var taskHTML = p.taskGroups
                 ? p.taskGroups
-                      .map(function (g) {
-                          return (
-                              '<p class="modal-subgroup">' + esc(g.label) + "</p>" +
-                              listHTML(g.items)
-                          );
-                      })
-                      .join("")
+                    .map(function (g) {
+                        return (
+                            '<p class="modal-subgroup">' + esc(g.label) + "</p>" +
+                            listHTML(g.items)
+                        );
+                    })
+                    .join("")
                 : listHTML(p.tasks);
 
             var toolHTML =
@@ -3104,12 +3114,12 @@
                 html += sectionHTML(
                     "산출물",
                     '<div class="modal-confidential">' +
-                        '<p class="lock-text">CONFIDENTIAL</p>' +
-                        "<p>본 프로젝트의 산출물은 공개하지 않습니다.</p>" +
-                        '<button type="button" class="modal-link" data-open="' +
-                        ASSETS_PROJECT_ID +
-                        '">공개 산출물 예시 보기 (웨어닥터) &rarr;</button>' +
-                        "</div>",
+                    '<p class="lock-text">CONFIDENTIAL</p>' +
+                    "<p>본 프로젝트의 산출물은 공개하지 않습니다.</p>" +
+                    '<button type="button" class="modal-link" data-open="' +
+                    ASSETS_PROJECT_ID +
+                    '">공개 산출물 예시 보기 (웨어닥터) &rarr;</button>' +
+                    "</div>",
                 );
             }
 
@@ -3120,7 +3130,7 @@
             var p = PROJECTS[id];
             if (!p) return;
             renderModal(p);
-            modal.scrollTop = 0;
+            modalScroll.scrollTop = 0;
             overlay.classList.add("open");
             document.body.style.overflow = "hidden";
             modalClose.focus();
