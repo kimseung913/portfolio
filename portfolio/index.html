@@ -378,6 +378,14 @@
             max-width: 520px;
             line-height: 1.85;
             margin-bottom: 40px;
+            text-wrap: pretty;
+        }
+
+        /* 데스크톱 전용 줄바꿈: 좁은 화면에서는 자연 줄바꿈에 맡김 */
+        @media (max-width: 768px) {
+            .br-pc {
+                display: none;
+            }
         }
 
         .hero-stats {
@@ -708,8 +716,10 @@
             margin-right: 2px;
         }
 
-        .comp-evidence button {
+        .comp-evidence button,
+        .comp-evidence a {
             font: inherit;
+            text-decoration: none;
             color: var(--text-secondary);
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -721,7 +731,8 @@
                 border-color 0.2s;
         }
 
-        .comp-evidence button:hover {
+        .comp-evidence button:hover,
+        .comp-evidence a:hover {
             color: var(--accent);
             border-color: var(--accent);
         }
@@ -2097,7 +2108,7 @@
                 </h1>
                 <p class="hero-title">SI 기획 &nbsp;|&nbsp; 7년차</p>
                 <p class="hero-desc">
-                    발주처의 요구를 확정 가능한 요건으로 정리하고,<br />
+                    발주처의 요구를 확정 가능한 요건으로 정리하고,<br class="br-pc" />
                     착수부터 통합테스트까지 기획 산출물 전 과정을 책임지는 기획자입니다.<br />
                     질병관리청 사업 3년 연속 전담을 비롯해, 공공·유통·통신·교육 등
                     6개 도메인에서 13개 프로젝트를 수행했습니다.
@@ -2219,7 +2230,9 @@
                     </p>
                     <p class="comp-evidence">
                         <span class="comp-evidence-label">근거</span>
-                        <span>이 포트폴리오 사이트를 AI 도구로 직접 기획·제작</span>
+                        <a href="https://www.kukjelife.co.kr/" target="_blank" rel="noopener noreferrer">국제라이프 후불제 장례 사이트 &#8599;</a>
+                        <span>기획·FO 구현·배포·검색엔진 등록까지 수행 (고객사: 국제케어)</span>
+                        <span>이 포트폴리오 사이트도 AI 도구로 직접 기획·제작</span>
                     </p>
                 </article>
             </div>
